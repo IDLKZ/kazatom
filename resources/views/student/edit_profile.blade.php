@@ -4,7 +4,7 @@
 
         <!-- =======================
         Page Banner START -->
-        @include('instructor.navbar')
+        @include('student.navbar')
         <!-- =======================
         Page Banner END -->
 
@@ -14,11 +14,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Right sidebar START -->
-                    <div class="col-xl-3">
-                        <!-- Responsive offcanvas body START -->
-                        @include('instructor.menu')
-                        <!-- Responsive offcanvas body END -->
-                    </div>
+                @include('student.menu')
                     <!-- Right sidebar END -->
 
                     <!-- Main content START -->
@@ -31,7 +27,7 @@
                             <!-- Card body START -->
                             <div class="card-body">
                                 <!-- Form -->
-                                <form action="{{route('instructorUpdateProfile', $profile->id)}}" class="row g-4" enctype="multipart/form-data" method="post">
+                                <form action="{{route('studentUpdateProfile', $profile->id)}}" class="row g-4" enctype="multipart/form-data" method="post">
                                     @csrf
                                     @method('put')
                                     <!-- Profile picture -->

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\Upload;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -16,9 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Result extends Model
 {
+    use Upload;
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';

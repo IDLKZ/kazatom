@@ -6,6 +6,7 @@ use App\Http\Controllers\Instructor\MainController as InstructorMainController;
 use App\Http\Controllers\Instructor\CourseController as InstructorCourseController;
 use App\Http\Controllers\Instructor\StudentController as InstructorStudentController;
 use App\Http\Controllers\Student\MainController as StudentMainController;
+use App\Http\Controllers\Student\CourseController as StudentCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('index');
+Route::get('/courses', [MainController::class, 'courses'])->name('courses');
+Route::get('/courses-by-category/{id}', [MainController::class, 'coursesByCategoryId'])->name('coursesByCategory');
+Route::post('/courses-by-filter', [MainController::class, 'coursesByFilter'])->name('coursesByFilter');
+Route::get('/detail-course/{id}', [MainController::class, 'detailCourse'])->name('detail-course');
+Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/contact-us', [MainController::class, 'contact'])->name('contact');
 
 Auth::routes();
 Route::get('logout', function (){
    Auth::logout();
-   return redirect(\route('login'));
+   return redirect(\route('index'));
 });
 
 Route::group(['middleware' => 'auth'], function (){
@@ -58,10 +65,25 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::delete('/create-course/delete-video/{id}', [InstructorCourseController::class, 'deleteVideo'])->name('instructorDeleteVideo');
         Route::delete('/create-course/delete-quiz/{id}', [InstructorCourseController::class, 'deleteQuiz'])->name('instructorDeleteQuiz');
+
+        Route::get('send-envelope/{id}', [InstructorMainController::class, 'getEnvelope'])->name('instructorGetSendEnvelope');
+        Route::post('send-envelope', [InstructorMainController::class, 'postEnvelope'])->name('instructorPostSendEnvelope');
     });
 
     Route::group(['prefix' => 'student'], function (){
         Route::get('/', [StudentMainController::class, 'index'])->name('studentHome');
+
+        //        ENROLL COURSE
+        Route::get('/enroll-course/{id}', [StudentCourseController::class, 'add'])->name('studentEnrollCourse');
+        Route::get('/list-video-course/{id}', [StudentCourseController::class, 'listVideo'])->name('studentListVideoCourse');
+        Route::get('/watch-course/{id}/{course_id}', [StudentCourseController::class, 'watch'])->name('studentWatchCourse');
+
+        //        PASS EXAM
+        Route::get('pass-exam/{id}', [StudentCourseController::class, 'passExam'])->name('passExam');
+        Route::post('check-exam', [StudentCourseController::class, 'checkExam'])->name('checkExam');
+        //        EDIT PROFILE
+        Route::get('edit-profile', [StudentMainController::class, 'editProfile'])->name('studentEditProfile');
+        Route::put('update-profile/{id}', [StudentMainController::class, 'updateProfile'])->name('studentUpdateProfile');
     });
 });
 

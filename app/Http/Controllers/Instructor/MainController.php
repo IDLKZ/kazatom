@@ -6,8 +6,10 @@ use App\Category;
 use App\Course;
 use App\Http\Controllers\Controller;
 use App\Level;
+use App\Mail\MailTest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -39,5 +41,26 @@ class MainController extends Controller
             $user->uploadFile($request['image'], 'image');
         }
         return redirect()->back();
+    }
+
+    public function getEnvelope($id)
+    {
+        $user = User::find($id);
+        return view('instructor.envelope', compact('user'));
+    }
+
+    public function postEnvelope(Request $request)
+    {
+        $this->validate($request, [
+           'message' => 'required'
+        ]);
+        $details = [
+            'title' => 'Mail from Kazatomprom',
+            'body' => $request['message']
+        ];
+
+//        Mail::to($request['email'])->send(new MailTest($details));
+
+        return redirect(route('instructorStudents'));
     }
 }
