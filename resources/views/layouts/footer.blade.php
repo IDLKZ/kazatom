@@ -97,21 +97,8 @@
                     <!-- copyright links-->
                     <div class=" mt-3 mt-md-0">
                         <ul class="list-inline mb-0">
-                            <li class="list-inline-item">
-                                <!-- Language selector -->
-                                <div class="dropup mt-0 text-center text-sm-end">
-                                    <a class="dropdown-toggle nav-link" href="index.html#" role="button" id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-globe me-2"></i>Language
-                                    </a>
-                                    <ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
-                                        <li><a class="dropdown-item me-4" href="index.html#"><img class="fa-fw me-2" src="/assets/images/flags/uk.svg" alt="">English</a></li>
-                                        <li><a class="dropdown-item me-4" href="index.html#"><img class="fa-fw me-2" src="/assets/images/flags/gr.svg" alt="">German </a></li>
-                                        <li><a class="dropdown-item me-4" href="index.html#"><img class="fa-fw me-2" src="/assets/images/flags/sp.svg" alt="">French</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="list-inline-item"><a class="nav-link" href="index.html#">Terms of use</a></li>
-                            <li class="list-inline-item"><a class="nav-link pe-0" href="index.html#">Privacy policy</a></li>
+                            <li class="list-inline-item"><a class="nav-link" href="javascript:void (0)">Terms of use</a></li>
+                            <li class="list-inline-item"><a class="nav-link pe-0" href="javascript:void (0)">Privacy policy</a></li>
                         </ul>
                     </div>
                 </div>
