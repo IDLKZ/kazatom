@@ -104,7 +104,7 @@
                                                             <div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle flex-shrink-0"><i class="fas fa-user-graduate fa-fw"></i></div>
                                                             <h6 class="mb-0 ms-2 fw-light">Всего студентов</h6>
                                                         </div>
-                                                        <span class="mb-0 fw-bold">{{count($students[$instructor->id])}}</span>
+                                                        <span class="mb-0 fw-bold">{{array_key_exists($instructor->id, $students) ? count($students[$instructor->id]) : 0}}</span>
                                                     </div>
 
                                                     <!-- Total courses -->
@@ -165,7 +165,7 @@
                                             <td>{{$instructor->courses->count()}}</td>
 
                                             <!-- Table data -->
-                                            <td>{{count($students[$instructor->id])}}</td>
+                                            <td>{{array_key_exists($instructor->id, $students) ? count($students[$instructor->id]) : 0}}</td>
 
                                             <!-- Table data -->
                                             <td>
