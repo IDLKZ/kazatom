@@ -93,7 +93,7 @@
             <div class="container px-0">
                 <div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
                     <!-- copyright text -->
-                    <div class="text-primary-hover"> Copyrights <a href="index.html#" class="text-body">©2021 Eduport</a>. All rights reserved. </div>
+                    <div class="text-primary-hover"> Copyrights <a href="index.html#" class="text-body">©2021 Kazatomprom</a>. All rights reserved. </div>
                     <!-- copyright links-->
                     <div class=" mt-3 mt-md-0">
                         <ul class="list-inline mb-0">

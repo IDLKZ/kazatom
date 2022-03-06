@@ -43,7 +43,7 @@
                                     <span class="display-6 lh-1 text-success mb-0"><i class="fas fa-medal fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="8" data-purecounter-delay="300" data-purecounter-duration="0">8</h5>
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->where('status', 1)->count()}}" data-purecounter-delay="300" data-purecounter-duration="0">{{$results->where('status', 1)->count()}}</h5>
                                         </div>
                                         <p class="mb-0 h6 fw-light">Завершенные курсы</p>
                                     </div>
