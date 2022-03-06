@@ -138,16 +138,17 @@
                                         <!-- Buttons -->
                                         <div class="mt-3 d-sm-flex justify-content-sm-end">
 {{--                                            <a href="course-detail.html#" class="btn btn-outline-primary mb-0">Free trial</a>--}}
-                                            @if(auth()->user()->role_id == 3)
-                                                @if($bool)
-                                                    <a href="{{route('studentListVideoCourse', $course->id)}}" class="btn btn-outline-primary mb-0">
-                                                        {{$res->status ? 'Посмотреть' : 'Продолжить'}}
-                                                    </a>
-                                                @else
-                                                    <a href="{{route('studentEnrollCourse', $course->id)}}" class="btn btn-success mb-0">Записаться</a>
+                                            @if(auth()->check())
+                                                @if(auth()->user()->role_id == 3)
+                                                    @if($bool)
+                                                        <a href="{{route('studentListVideoCourse', $course->id)}}" class="btn btn-outline-primary mb-0">
+                                                            {{$res->status ? 'Посмотреть' : 'Продолжить'}}
+                                                        </a>
+                                                    @else
+                                                        <a href="{{route('studentEnrollCourse', $course->id)}}" class="btn btn-success mb-0">Записаться</a>
+                                                    @endif
                                                 @endif
                                             @endif
-
                                         </div>
                                     </div>
                                 </div>
