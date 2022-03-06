@@ -43,6 +43,7 @@ class Course extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -81,5 +82,23 @@ class Course extends Model
     public function videos()
     {
         return $this->hasMany('App\Video');
+    }
+
+
+    public function removeAll($obj)
+    {
+        foreach ($obj->videos as $video)
+        {
+            $video->remove('url');
+        }
+        foreach ($obj->quizes as $quize)
+        {
+            $quize->delete();
+        }
+        foreach ($obj->results as $result)
+        {
+            $result->delete();
+        }
+        $obj->remove('image');
     }
 }

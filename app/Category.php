@@ -15,7 +15,7 @@ class Category extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -32,4 +32,5 @@ class Category extends Model
     {
         return $this->hasMany('App\Course');
     }
+
 }

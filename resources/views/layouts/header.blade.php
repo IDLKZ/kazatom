@@ -79,7 +79,7 @@
                             </div>
                             <div>
                                 @if(auth()->user()->role_id == 1)
-                                    <a class="h6" href="">{{auth()->user()->name}}</a>
+                                    <a class="h6" href="{{route('adminHome')}}">{{auth()->user()->name}}</a>
                                 @elseif(auth()->user()->role_id == 2)
                                     <a class="h6" href="{{route('instructorHome')}}">{{auth()->user()->name}}</a>
                                 @else
@@ -94,7 +94,7 @@
 {{--                    <li><a class="dropdown-item" href="index.html#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>--}}
                     <li>
                         @if(auth()->user()->role_id == 1)
-                            <a class="dropdown-item" href="{{route('instructorEditProfile')}}"><i class="bi bi-gear fa-fw me-2"></i>Настройки</a>
+{{--                            <a class="dropdown-item" href="{{route('instructorEditProfile')}}"><i class="bi bi-gear fa-fw me-2"></i>Настройки</a>--}}
                         @elseif(auth()->user()->role_id == 2)
                             <a class="dropdown-item" href="{{route('instructorEditProfile')}}"><i class="bi bi-gear fa-fw me-2"></i>Настройки</a>
                         @else

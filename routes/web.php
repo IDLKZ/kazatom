@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\InstructorController;
+use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Instructor\MainController as InstructorMainController;
@@ -38,6 +43,15 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function (){
         Route::get('/', [AdminMainController::class, 'index'])->name('adminHome');
+
+        Route::resource('categories', CategoryController::class)->except('show');
+        Route::resource('levels', LevelController::class)->except('show');
+        Route::resource('courses', CourseController::class)->except('edit', 'update', 'show');
+        Route::resource('instructors', InstructorController::class)->except('edit', 'update', 'show');
+        Route::resource('students', StudentController::class)->except('edit', 'update', 'show');
+
+//        SEARCH
+        Route::get('search', [AdminMainController::class, 'search'])->name('adminSearch');
     });
 
     Route::group(['prefix' => 'instructor', 'middleware' => 'instructor'], function (){

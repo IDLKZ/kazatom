@@ -45,7 +45,7 @@
                         <!-- Divider -->
                         <hr class="d-xl-none">
                         <div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-                            <a class="h6 mb-0 fw-bold d-xl-none" href="instructor-dashboard.html#">Menu</a>
+                            <a class="h6 mb-0 fw-bold d-xl-none" href="javascript:void(0)">Menu</a>
                             <button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                                 <i class="fas fa-sliders-h"></i>
                             </button>
@@ -94,7 +94,7 @@
                                     <span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200" data-purecounter-duration="0">25</h5>
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{count($students)}}" data-purecounter-delay="200" data-purecounter-duration="0">{{count($students)}}</h5>
 {{--                                            <span class="mb-0 h5">K+</span>--}}
                                         </div>
                                         <span class="mb-0 h6 fw-light">Всего студентов</span>
@@ -159,7 +159,7 @@
                                                                 </div>
                                                                 <!-- Title -->
                                                                 <h6 class="mb-0 ms-2">
-                                                                    <a href="instructor-dashboard.html#">{{$course->title}}</a>
+                                                                    <a href="{{route('detail-course', $course->id)}}">{{$course->title}}</a>
                                                                 </h6>
                                                             </div>
                                                         </td>

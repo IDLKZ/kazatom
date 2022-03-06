@@ -15,7 +15,7 @@ class StudentController extends Controller
         foreach ($courses as $course){
             if ($course->results->count() > 0){
                 foreach ($course->results as $result){
-                    $students[$result->user->id] = $course->results;
+                    $students[$result->user->id] = $result;
                 }
             }
         }

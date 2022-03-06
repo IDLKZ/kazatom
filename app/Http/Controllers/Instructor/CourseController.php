@@ -160,19 +160,7 @@ class CourseController extends Controller
     public function delete($id)
     {
         $course = Course::with('videos', 'quizes', 'results')->where(['user_id' => auth()->id(), 'id' => $id])->first();
-        foreach ($course->videos as $video)
-        {
-            $video->remove('url');
-        }
-        foreach ($course->quizes as $quize)
-        {
-            $quize->delete();
-        }
-        foreach ($course->results as $result)
-        {
-            $result->delete();
-        }
-        $course->remove('image');
+        $course->removeAll($course);
         return redirect()->back();
     }
 

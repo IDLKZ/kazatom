@@ -62,10 +62,8 @@
                                         <!-- Table body START -->
                                         <tbody>
                                         @if(count($students) > 0)
-                                            @foreach($students as $items)
-                                                @foreach($items as $student)
-                                                    <!-- Table item -->
-                                                    <tr>
+                                            @foreach($students as $student)
+                                                <tr>
                                                         <!-- Table data -->
                                                         <td>
                                                             <div class="d-flex align-items-center position-relative">
@@ -75,7 +73,7 @@
                                                                 </div>
                                                                 <div class="mb-0 ms-2">
                                                                     <!-- Title -->
-                                                                    <h6 class="mb-0"><a href="" class="stretched-link">{{$student->user->name}}</a></h6>
+                                                                    <h6 class="mb-0"><a href="javascript:void (0)" class="stretched-link">{{$student->user->name}}</a></h6>
                                                                     <!-- Address -->
 {{--                                                                    <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Mumbai</span>--}}
                                                                 </div>
@@ -106,7 +104,6 @@
                                                         </td>
 
                                                     </tr>
-                                                @endforeach
                                             @endforeach
                                         @endif
 

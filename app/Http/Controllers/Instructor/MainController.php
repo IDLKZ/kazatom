@@ -16,7 +16,16 @@ class MainController extends Controller
     public function index()
     {
         $profile = User::with('courses.videos')->where('id', auth()->id())->first();
-        return view('instructor.index', compact('profile'));
+        $students = [];
+        foreach ($profile->courses as $course){
+            if ($course->results->count() > 0){
+                foreach ($course->results as $result){
+                    $students[$result->user->id] = $course->results;
+                }
+            }
+        }
+
+        return view('instructor.index', compact('profile', 'students'));
     }
 
     public function editProfile()

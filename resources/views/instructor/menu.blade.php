@@ -20,7 +20,7 @@
                     {{--                                            <a class="list-group-item" href="instructor-payout.html"><i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>--}}
                     <a class="list-group-item {{Request::is('instructor/edit-profile') ? 'active' : ''}}" href="{{route('instructorEditProfile')}}"><i class="bi bi-gear fa-fw me-2"></i>Настройки</a>
                     {{--                                            <a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>--}}
-                    <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Выход</a>
+                    <a class="list-group-item text-danger bg-danger-soft-hover" href="{{route('logout')}}"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Выход</a>
                 </div>
             </div>
         </div>

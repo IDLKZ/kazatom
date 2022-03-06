@@ -20,7 +20,7 @@
                         <!-- info -->
                         <p class="mb-4">Either something went wrong or this page doesn't exist anymore.</p>
                         <!-- Button -->
-                        <a href="index.html" class="btn btn-primary mb-0">Take me to Homepage</a>
+                        <a href="{{route('index')}}" class="btn btn-primary mb-0">На главную</a>
                     </div>
                 </div>
             </div>
