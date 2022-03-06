@@ -148,6 +148,8 @@
                                                         <a href="{{route('studentEnrollCourse', $course->id)}}" class="btn btn-success mb-0">Записаться</a>
                                                     @endif
                                                 @endif
+                                            @else
+                                                <a href="{{route('login')}}" class="btn btn-success mb-0">Записаться</a>
                                             @endif
                                         </div>
                                     </div>
