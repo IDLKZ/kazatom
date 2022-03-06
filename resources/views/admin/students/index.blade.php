@@ -5,7 +5,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-12">
-                <h1 class="h3 mb-2 mb-sm-0">Студенты</h1>
+                <h1 class="h3 mb-2 mb-sm-0">Студенты <span class="badge bg-orange bg-opacity-10 text-orange ms-3">{{$students->count()}}</span></h1>
             </div>
         </div>
 

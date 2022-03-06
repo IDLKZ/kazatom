@@ -5,7 +5,7 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Курсы</h1>
+                <h1 class="h3 mb-2 mb-sm-0"><span class="badge bg-orange bg-opacity-10 text-orange">{{$categories->count()}}</span>Курсы</h1>
                 {{--                <a href="instructor-create-course.html" class="btn btn-sm btn-primary mb-0">Create a Course</a>--}}
             </div>
         </div>
