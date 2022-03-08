@@ -102,7 +102,7 @@
                                                                 </div>
                                                                 <div class="mb-0 ms-2">
                                                                     <!-- Title -->
-                                                                    <h6><a href="student-dashboard.html#">{{$item->course->title}}</a></h6>
+                                                                    <h6><a href="{{route('studentListVideoCourse', $item->course->id)}}">{{$item->course->title}}</a></h6>
                                                                     <!-- Info -->
                                                                 </div>
                                                             </div>
@@ -117,9 +117,9 @@
                                                         <!-- Table data -->
                                                         <td>
                                                             @if($item->status)
-                                                                <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Complete</button>
+                                                                <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Завершено</button>
                                                             @else
-                                                                <a href="{{route('studentListVideoCourse', $item->course->id)}}" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
+                                                                <a href="{{route('studentListVideoCourse', $item->course->id)}}" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Продолжить</a>
                                                             @endif
                                                         </td>
                                                     </tr>

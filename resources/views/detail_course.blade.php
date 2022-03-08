@@ -145,11 +145,11 @@
                                                             {{$res->status ? 'Посмотреть' : 'Продолжить'}}
                                                         </a>
                                                     @else
-                                                        <a href="{{route('studentEnrollCourse', $course->id)}}" class="btn btn-success mb-0">Записаться</a>
+                                                        <a href="{{route('studentEnrollCourse', $course->id)}}" class="btn btn-success mb-0">Начать</a>
                                                     @endif
                                                 @endif
                                             @else
-                                                <a href="{{route('login')}}" class="btn btn-success mb-0">Записаться</a>
+                                                <a href="{{route('login')}}" class="btn btn-success mb-0">Начать</a>
                                             @endif
                                         </div>
                                     </div>

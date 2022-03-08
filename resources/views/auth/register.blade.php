@@ -11,22 +11,12 @@
                         <div class="p-3 p-lg-5">
                             <!-- Title -->
                             <div class="text-center">
-                                <h2 class="fw-bold">Welcome to our largest community</h2>
-                                <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                                <h2 class="fw-bold">Добро пожаловать в нашу команду</h2>
+                                <p class="mb-0 h6 fw-light">Начните свое обучение прямо сейчас!</p>
                             </div>
                             <!-- SVG Image -->
                             <img src="assets/images/element/02.svg" class="mt-5" alt="">
                             <!-- Info -->
-                            <div class="d-sm-flex mt-5 align-items-center justify-content-center">
-                                <ul class="avatar-group mb-2 mb-sm-0">
-                                    <li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar"></li>
-                                    <li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar"></li>
-                                    <li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar"></li>
-                                    <li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar"></li>
-                                </ul>
-                                <!-- Content -->
-                                <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4k+ Students joined us, now it's your turn.</p>
-                            </div>
                         </div>
                     </div>
 
@@ -36,8 +26,8 @@
                             <div class="col-sm-10 col-xl-8 m-auto">
                                 <!-- Title -->
                                 <img src="assets/images/element/03.svg" class="h-40px mb-2" alt="">
-                                <h2>Sign up for your account!</h2>
-                                <p class="lead mb-4">Nice to see you! Please Sign up with your account.</p>
+                                <h2>Создайте свой аккаунт!</h2>
+                                <p class="lead mb-4">Добро пожаловать!</p>
 
                                 <!-- Form START -->
                                 <form action="{{route('register')}}" method="post">
@@ -59,7 +49,7 @@
                                     </div>
                                     <!-- Email -->
                                     <div class="mb-4">
-                                        <label for="exampleInputEmail1" class="form-label">Email address *</label>
+                                        <label for="exampleInputEmail1" class="form-label">Email *</label>
                                         <div class="input-group input-group-lg">
                                             <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-fill"></i></span>
                                             <input name="email" type="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1">
@@ -89,10 +79,10 @@
                                     </div>
 {{--                                        Select Role--}}
                                     <div class="mb-4">
-                                        <label for="inputRole" class="form-label">Выберите роль *</label>
+                                        <label for="inputRole" class="form-label">Я являюсь *</label>
                                         <select name="role_id" class="form-control" id="inputRole">
-                                            <option value="2">Преподаватель</option>
-                                            <option value="3">Обучающийся</option>
+                                            <option value="3">Сотрудником</option>
+                                            <option value="2">Инструктором</option>
                                         </select>
                                         @if ($errors->has('role_id'))
                                             @foreach ($errors->get('role_id') as $message)

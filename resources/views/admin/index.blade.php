@@ -33,7 +33,7 @@
                         <!-- Digit -->
                         <div>
                             <h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$instructors}}"	data-purecounter-delay="200">0</h2>
-                            <span class="mb-0 h6 fw-light">Преподаватели</span>
+                            <span class="mb-0 h6 fw-light">Инструкторы</span>
                         </div>
                         <!-- Icon -->
                         <div class="icon-lg rounded-circle bg-purple text-white mb-0"><i class="fas fa-user-tie fa-fw"></i></div>
@@ -48,7 +48,7 @@
                         <!-- Digit -->
                         <div>
                             <h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$students}}"	data-purecounter-delay="200">0</h2>
-                            <span class="mb-0 h6 fw-light">Студенты</span>
+                            <span class="mb-0 h6 fw-light">Сотрудники</span>
                         </div>
                         <!-- Icon -->
                         <div class="icon-lg rounded-circle bg-primary text-white mb-0"><i class="fas fa-user-graduate fa-fw"></i></div>

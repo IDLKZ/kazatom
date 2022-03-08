@@ -15,8 +15,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <!-- Title -->
-                        <h1 class="text-white">Submit a new Course</h1>
-                        <p class="text-white mb-0">Read our <a href="instructor-create-course.html#" class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>
+                        <h1 class="text-white">Создайте новый видеоурок к курсу</h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +30,9 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
                         <!-- Content -->
-                        <p class="text-center">Use this interface to add a new Course to the portal. Once you are done adding the item it will be reviewed for quality. If approved, your course will appear for sale and you will be informed by email that your course has been accepted.</p>
+                        <p class="text-center">
+                            Используйте популярные видеоформаты для загрузки в видео
+                        </p>
                     </div>
                 </div>
 
@@ -85,7 +86,7 @@
                                 <!-- Step 2 content START -->
                                 <div id="step-2" role="tabpanel" class="content fade active dstepper-block" aria-labelledby="steppertrigger2">
                                     <!-- Title -->
-                                    <h4>Curriculum</h4>
+                                    <h4>Видео</h4>
                                     @if ($errors->has('url'))
                                         @foreach ($errors->get('url') as $message)
                                             <div>
@@ -105,8 +106,8 @@
                                         <div class="row">
                                             <!-- Add lecture Modal button -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
-                                                <h5 class="mb-2 mb-sm-0">Upload Lecture</h5>
-                                                <a href="instructor-create-course.html#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle me-2"></i>Добавить</a>
+                                                <h5 class="mb-2 mb-sm-0">Создать</h5>
+                                                <a href="" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle me-2"></i>Добавить</a>
                                             </div>
 
                                             <!-- Edit lecture START -->
@@ -133,7 +134,7 @@
                                                 @else
                                                 <div class="d-flex justify-content-between align-items-center my-3">
                                                     <div class="position-relative">
-                                                        <span class="ms-2 mb-0 h6 fw-light">No content</span>
+                                                        <span class="ms-2 mb-0 h6 fw-light">Отсутствует содержимое</span>
                                                     </div>
                                                 </div>
                                                 @endif

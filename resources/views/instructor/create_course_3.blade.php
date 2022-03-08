@@ -15,8 +15,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <!-- Title -->
-                        <h1 class="text-white">Submit a new Course</h1>
-                        <p class="text-white mb-0">Read our <a href="instructor-create-course.html#" class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>
+                        <h1 class="text-white">Создать новый тест к курсу</h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +30,9 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
                         <!-- Content -->
-                        <p class="text-center">Use this interface to add a new Course to the portal. Once you are done adding the item it will be reviewed for quality. If approved, your course will appear for sale and you will be informed by email that your course has been accepted.</p>
+                        <p class="text-center">
+                            Добавьте новый тест к курсу
+                        </p>
                     </div>
                 </div>
 
@@ -85,7 +86,7 @@
                                 <!-- Step 3 content START -->
                                 <div id="step-3" role="tabpanel" class="content fade active dstepper-block" aria-labelledby="steppertrigger3">
                                     <!-- Title -->
-                                    <h4>Additional information</h4>
+                                    <h4>Дополнительная информация</h4>
 
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
@@ -105,7 +106,7 @@
                                         <div class="col-12">
                                             <div class="bg-light border rounded p-2 p-sm-4">
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
-                                                    <h5 class="mb-2 mb-sm-0">Upload FAQs</h5>
+                                                    <h5 class="mb-2 mb-sm-0">Добавить</h5>
                                                     <button class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addQuestion"><i class="bi bi-plus-circle me-2"></i>Add Question</button>
                                                 </div>
 
@@ -152,7 +153,7 @@
                                                         <div class="col-12">
                                                             <div class="bg-body p-3 p-sm-4 border rounded">
                                                                 <!-- Content -->
-                                                                <p>No test</p>
+                                                                <p>Отсутствует тест</p>
                                                             </div>
                                                         </div>
                                                     @endif

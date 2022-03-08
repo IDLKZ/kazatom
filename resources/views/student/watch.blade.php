@@ -106,7 +106,7 @@
 
                                 <!-- Course content START -->
                                 <div class="card-body">
-                                    <h5>Course content</h5>
+                                    <h5>Материалы курса</h5>
                                     <hr> <!-- Divider -->
                                     <!-- Course START -->
                                     <div class="row">
@@ -135,11 +135,6 @@
                                 </div>
                                 <!-- Course content END -->
 
-                                <div class="card-footer">
-                                    <div class="d-grid">
-                                        <a href="course-detail.html" class="btn btn-primary-soft mb-0">Back to course</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- Collapse body END -->

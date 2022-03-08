@@ -62,7 +62,7 @@
 
                                 <!-- Course content START -->
                                 <div class="card-body">
-                                    <h5>Course content</h5>
+                                    <h5>Видеоуроки курса</h5>
 
                                     <!-- Course START -->
                                     <div class="row">

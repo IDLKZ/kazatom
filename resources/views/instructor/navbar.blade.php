@@ -39,7 +39,7 @@
                 <!-- Divider -->
                 <hr class="d-xl-none">
                 <div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-                    <a class="h6 mb-0 fw-bold d-xl-none" href="instructor-dashboard.html#">Menu</a>
+                    <a class="h6 mb-0 fw-bold d-xl-none" href="">Меню</a>
                     <button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <i class="fas fa-sliders-h"></i>
                     </button>

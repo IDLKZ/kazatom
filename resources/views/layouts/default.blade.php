@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <base href="/">
-    <title>Eduport - LMS, Education and Course Theme</title>
+    <title>Kazatomprom - Программа для повышения осведомленности по вопросам информационной безопасности</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -10,6 +10,14 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
+
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -15,8 +15,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <!-- Title -->
-                        <h1 class="text-white">Submit a new Course</h1>
-                        <p class="text-white mb-0">Read our <a href="instructor-create-course.html#" class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>
+                        <h1 class="text-white">Создать новый курс</h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +30,8 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
                         <!-- Content -->
-                        <p class="text-center">Use this interface to add a new Course to the portal. Once you are done adding the item it will be reviewed for quality. If approved, your course will appear for sale and you will be informed by email that your course has been accepted.</p>
+                        <p class="text-center">
+                            Создайте курс </p>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
                                 <!-- Step 1 content START -->
                                 <div id="step-1" role="tabpanel" class="content fade active dstepper-block" aria-labelledby="steppertrigger1">
                                     <!-- Title -->
-                                    <h4>Course details</h4>
+                                    <h4>Детали курса</h4>
 
                                     <hr> <!-- Divider -->
                                     <form action="{{route('instructorStoreCourseStepOne')}}" method="post" enctype="multipart/form-data">
@@ -94,8 +94,8 @@
                                         <div class="row g-4">
                                             <!-- Course title -->
                                             <div class="col-12">
-                                                <label class="form-label">Course title</label>
-                                                <input name="title" class="form-control" type="text" placeholder="Enter course title">
+                                                <label class="form-label">Наименование курса</label>
+                                                <input name="title" class="form-control" type="text" placeholder="Введите наименование курса">
                                                 @if ($errors->has('title'))
                                                     @foreach ($errors->get('title') as $message)
                                                         <div>
@@ -107,8 +107,8 @@
 
                                             <!-- Short description -->
                                             <div class="col-12">
-                                                <label class="form-label">Short description</label>
-                                                <textarea name="short_description" class="form-control" rows="2" placeholder="Enter keywords"></textarea>
+                                                <label class="form-label">Короткое описание</label>
+                                                <textarea name="short_description" class="form-control" rows="2" placeholder="Короткое описание курса"></textarea>
                                                 @if ($errors->has('short_description'))
                                                     @foreach ($errors->get('short_description') as $message)
                                                         <div>
@@ -120,7 +120,7 @@
 
                                             <!-- Course category -->
                                             <div class="col-md-6">
-                                                <label class="form-label">Course category</label>
+                                                <label class="form-label">Категория курса</label>
                                                 <select name="category_id" class="form-control">
                                                     @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->title}}</option>
@@ -130,7 +130,7 @@
 
                                             <!-- Course level -->
                                             <div class="col-md-6">
-                                                <label class="form-label">Course level</label>
+                                                <label class="form-label">Уровень курса</label>
                                                 <select name="level_id" class="form-control">
                                                     @foreach($levels as $level)
                                                         <option value="{{$level->id}}">{{$level->title}}</option>
@@ -140,10 +140,10 @@
 
                                             <!-- Course time -->
                                             <div class="col-md-6">
-                                                <label class="form-label">Course time</label>
+                                                <label class="form-label">Выберите дедлайн</label>
                                                 <div class="docs-datepicker">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control docs-date" name="deadline" placeholder="Pick a date" autocomplete="off">
+                                                        <input type="text" class="form-control docs-date" name="deadline" placeholder="Выберите дедлайн" autocomplete="off">
                                                         <div class="input-group-append">
                                                             <button type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled="">
                                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -163,7 +163,7 @@
 
                                             <!-- Course time -->
                                             <div class="col-md-6">
-                                                <label class="form-label">Course image</label>
+                                                <label class="form-label">Изображение курса</label>
                                                 <input type="file" class="form-control" name="image">
                                                 @if ($errors->has('image'))
                                                     @foreach ($errors->get('image') as $message)
@@ -175,7 +175,7 @@
                                             </div>
                                                 <!-- Course description -->
                                                 <div class="col-md-12 mt-4">
-                                                    <label class="form-label">Add description</label>
+                                                    <label class="form-label">Описание курса</label>
                                                     <textarea name="description" id="editor"></textarea>
                                                     @if ($errors->has('description'))
                                                         @foreach ($errors->get('description') as $message)
@@ -188,7 +188,7 @@
 
                                                 <!-- Step 1 button -->
                                                 <div class="d-flex justify-content-end mt-3">
-                                                    <button type="submit" class="btn btn-primary next-btn mb-0">Next</button>
+                                                    <button type="submit" class="btn btn-primary next-btn mb-0">Далее</button>
                                                 </div>
                                             </div>
                                             <!-- Basic information START -->

@@ -141,8 +141,8 @@
                             </svg>
                         </figure>
                         <!-- Title -->
-                        <h1 class="mb-0 display-6">Limitless learning at your
-                            <span class="position-relative">fingertips
+                        <h3 class="mb-0 display-10">Программа для повышения осведомленности по вопросам информационной
+                            <span class="position-relative"> безопасности
                                 <!-- SVG START -->
             <span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
               <svg width="300px" height="62.1px" enable-background="new 0 0 366 62.1" viewBox="0 0 366 62.1" xmlns="http://www.w3.org/2000/svg">
@@ -151,28 +151,22 @@
             </span>
                                 <!-- SVG END -->
 					</span>
-                        </h1>
+                        </h3>
 
                         <!-- Content -->
-                        <p class="my-4 lead">Online learning and teaching marketplace with 5K+ courses & 10M students. Taught by experts to help you acquire new skills.</p>
+                        <p class="my-4 lead">
+                            Обучение по 3 направлениям: информационная безопасность, техника безопасности на рабочем месте, противодействие коррупции                        </p>
 
                         <!-- Info -->
                         <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
-                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Learn with experts</li>
-                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get certificate</li>
-                            <li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get membership</li>
+                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Сертифицированные преподаватели</li>
+                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Выдача сертификатов</li>
+                            <li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>Доступ 24/7</li>
                         </ul>
 
                         <div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
                             <!-- Button -->
-                            <a href="index.html#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
-                            <!-- Video button -->
-                            <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="ms-0 ms-sm-4 d-block">
-                                <div class="btn btn-round btn-primary-shadow mb-0 me-3 align-middle d-inline-block"> <i class="fas fa-play"></i></div>
-                                <div class="align-middle d-inline-block">
-                                    <h6 class="mb-0 fw-normal">Watch video</h6>
-                                </div>
-                            </a>
+                            <a href="index.html#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать обучение</a>
                         </div>
                     </div>
                     <!-- Left content END -->
@@ -224,46 +218,34 @@
                         </div>
                         <!-- Icon logos END -->
 
-                        <!-- Congratulations message -->
-                        <div class="p-3 bg-blur border border-light shadow rounded-4 position-absolute bottom-0 start-0 z-index-9 d-none d-xl-block mb-5 ms-5">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <!-- Icon -->
-                                <span class="icon-lg bg-warning rounded-circle"><i class="fas fa-envelope text-white"></i></span>
-                                <!-- Info -->
-                                <div class="text-start ms-3">
-                                    <h6 class="mb-0 text-white">Congratulations <span class="ms-4"><i class="fas fa-check-circle text-success"></i></span></h6>
-                                    <p class="mb-0 small text-white">Your admission completed</p>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Active student -->
-                        <div class="p-3 bg-success d-inline-block rounded-4 shadow-lg position-absolute top-50 end-0 translate-middle-y mt-n7 z-index-1 d-none d-md-block" style="background:url(assets/images/pattern/01.png) no-repeat center center; background-size:cover;">
-                            <p class="text-white">Our daily new students</p>
-                            <!-- Avatar group -->
-                            <ul class="avatar-group mb-0">
-                                <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/01.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/02.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/03.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/04.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-sm">
-                                    <div class="avatar-img rounded-circle border-white bg-primary">
-                                        <span class="text-white position-absolute top-50 start-50 translate-middle small">1K+</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+{{--                        <div class="p-3 bg-success d-inline-block rounded-4 shadow-lg position-absolute top-50 end-0 translate-middle-y mt-n7 z-index-1 d-none d-md-block" style="background:url(assets/images/pattern/01.png) no-repeat center center; background-size:cover;">--}}
+{{--                            <p class="text-white">Our daily new students</p>--}}
+{{--                            <!-- Avatar group -->--}}
+{{--                            <ul class="avatar-group mb-0">--}}
+{{--                                <li class="avatar avatar-sm">--}}
+{{--                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/01.jpg" alt="avatar">--}}
+{{--                                </li>--}}
+{{--                                <li class="avatar avatar-sm">--}}
+{{--                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/02.jpg" alt="avatar">--}}
+{{--                                </li>--}}
+{{--                                <li class="avatar avatar-sm">--}}
+{{--                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/03.jpg" alt="avatar">--}}
+{{--                                </li>--}}
+{{--                                <li class="avatar avatar-sm">--}}
+{{--                                    <img class="avatar-img rounded-circle border-white" src="/assets/images/avatar/04.jpg" alt="avatar">--}}
+{{--                                </li>--}}
+{{--                                <li class="avatar avatar-sm">--}}
+{{--                                    <div class="avatar-img rounded-circle border-white bg-primary">--}}
+{{--                                        <span class="text-white position-absolute top-50 start-50 translate-middle small">1K+</span>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                         <!-- Image -->
                         <div class="position-relative">
-                            <img src="/assets/images/element/07.png" alt="">
+                            <img src="/images/bg.png" alt="">
                         </div>
                     </div>
                     <!-- Right content END -->
@@ -285,10 +267,11 @@
                             <span class="display-6 lh-1 text-warning mb-0"><i class="fas fa-tv"></i></span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex">
-                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="10"	data-purecounter-delay="200">0</h5>
-                                    <span class="mb-0 h5">K</span>
+                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{\App\Course::all()->count()}}"	data-purecounter-delay="200">
+                                        {{\App\Course::all()->count()}}
+                                    </h5>
                                 </div>
-                                <p class="mb-0">Online Courses</p>
+                                <p class="mb-0">Онлайн курсов</p>
                             </div>
                         </div>
                     </div>
@@ -298,10 +281,10 @@
                             <span class="display-6 lh-1 text-blue mb-0"><i class="fas fa-user-tie"></i></span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex">
-                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="200" data-purecounter-delay="200">0</h5>
+                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{\App\Models\User::where("role_id",2)->get()->count()}}" data-purecounter-delay="200">0</h5>
                                     <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">Expert Tutors</p>
+                                <p class="mb-0">Инструкторов</p>
                             </div>
                         </div>
                     </div>
@@ -311,10 +294,10 @@
                             <span class="display-6 lh-1 text-purple mb-0"><i class="fas fa-user-graduate"></i></span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex">
-                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="60"	data-purecounter-delay="200">0</h5>
-                                    <span class="mb-0 h5">K+</span>
+                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{\App\Models\User::where("role_id",3)->get()->count()}}"	data-purecounter-delay="200">0</h5>
+                                    <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">Online Students</p>
+                                <p class="mb-0">Сотрудников</p>
                             </div>
                         </div>
                     </div>
@@ -324,10 +307,10 @@
                             <span class="display-6 lh-1 text-info mb-0"><i class="bi bi-patch-check-fill"></i></span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex">
-                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-delay="300">0</h5>
-                                    <span class="mb-0 h5">K+</span>
+                                    <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{\App\Video::all()->count()}}" data-purecounter-delay="300">0</h5>
+                                    <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">Certified Courses</p>
+                                <p class="mb-0">Видеоуроков</p>
                             </div>
                         </div>
                     </div>
@@ -344,7 +327,7 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="fs-1">Популярные курсы</h2>
+                        <h2 class="fs-1">Курсы</h2>
                         <p class="mb-0">Выбирайте из сотен курсов от специализированных организаций</p>
                     </div>
                 </div>
@@ -398,250 +381,22 @@
         <!-- =======================
         Popular course END -->
 
-        <!-- =======================
-        Action box START -->
-        <section class="pt-0 pt-lg-5">
-            <div class="container position-relative">
-                <!-- SVG decoration START -->
-                <figure class="position-absolute top-50 start-50 translate-middle ms-2">
-                    <svg>
-                        <path class="fill-white opacity-4" d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"/>
-                        <path class="fill-white opacity-4" d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"/>
-                        <path class="fill-white opacity-4" d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"/>
-                        <path class="fill-white opacity-4" d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"/>
-                    </svg>
-                </figure>
-                <!-- SVG decoration END -->
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="bg-info p-4 p-sm-5 rounded-3">
-                            <div class="row position-relative">
-                                <!-- Svg decoration -->
-                                <figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
-                                    <svg width="141px" height="141px">
-                                        <path	d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"/>
-                                    </svg>
-                                </figure>
-                                <!-- Action box -->
-                                <div class="col-11 mx-auto position-relative">
-                                    <div class="row align-items-center">
-                                        <!-- Title -->
-                                        <div class="col-lg-7">
-                                            <h3 class="text-white">Become an Instructor!</h3>
-                                            <p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished.</p>
-                                        </div>
-                                        <!-- Content and input -->
-                                        <div class="col-lg-5 text-lg-end">
-                                            <a href="javascript:void (0)" class="btn btn-outline-warning mb-0">Start Teaching Today</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- Row END -->
-                        </div>
-                    </div>
-                </div> <!-- Row END -->
-            </div>
-        </section>
-        <!-- =======================
-        Action box END -->
 
         <!-- =======================
         Reviews START -->
         <section class="bg-light">
             <div class="container">
                 <div class="row g-4 g-lg-5 align-items-center">
-                    <div class="col-xl-7 order-2 order-xl-1">
-                        <div class="row mt-0 mt-xl-5">
-                            <!-- Review -->
-                            <div class="col-md-7 position-relative mb-0 mt-0 mt-md-5">
-                                <!-- SVG -->
-                                <figure class="fill-danger opacity-2 position-absolute top-0 start-0 translate-middle mb-3">
-                                    <svg width="211px" height="211px">
-                                        <path d="M210.030,105.011 C210.030,163.014 163.010,210.029 105.012,210.029 C47.013,210.029 -0.005,163.014 -0.005,105.011 C-0.005,47.015 47.013,-0.004 105.012,-0.004 C163.010,-0.004 210.030,47.015 210.030,105.011 Z"></path>
-                                    </svg>
-                                </figure>
-
-                                <div class="bg-body shadow text-center p-4 rounded-3 position-relative mb-5 mb-md-0">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl mb-3">
-                                        <img class="avatar-img rounded-circle" src="/assets/images/avatar/01.jpg" alt="avatar">
-                                    </div>
-                                    <!-- Content -->
-                                    <blockquote>
-                                        <p>
-                                            <span class="me-1 small"><i class="fas fa-quote-left"></i></span>
-                                            Moonlight newspaper up its enjoyment agreeable depending. Timed voice share led him to widen noisy young. At weddings believed laughing
-                                            <span class="ms-1 small"><i class="fas fa-quote-right"></i></span>
-                                        </p>
-                                    </blockquote>
-                                    <!-- Rating -->
-                                    <ul class="list-inline mb-2">
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-                                    </ul>
-                                    <!-- Info -->
-                                    <h6 class="mb-0">Carolyn Ortiz</h6>
-                                </div>
-                            </div>
-
-                            <!-- Mentor list -->
-                            <div class="col-md-5 mt-5 mt-md-0 d-none d-md-block">
-                                <div class="bg-body shadow p-4 rounded-3 d-inline-block position-relative">
-                                    <!-- Icon -->
-                                    <div class="icon-lg bg-warning rounded-circle position-absolute top-0 start-100 translate-middle">
-                                        <i class="bi bi-shield-fill-check text-dark"></i>
-                                    </div>
-                                    <!-- Title -->
-                                    <h6 class="mb-3">100+ Verified Mentors</h6>
-                                    <!-- Mentor Item -->
-                                    <div class="d-flex align-items-center mb-3">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-sm">
-                                            <img class="avatar-img rounded-1" src="/assets/images/avatar/09.jpg" alt="avatar">
-                                        </div>
-                                        <!-- Info -->
-                                        <div class="ms-2">
-                                            <h6 class="mb-0">Lori Stevens</h6>
-                                            <p class="mb-0 small">Tutor of physic</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Mentor Item -->
-                                    <div class="d-flex align-items-center mb-3">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-sm">
-                                            <img class="avatar-img rounded-1" src="/assets/images/avatar/04.jpg" alt="avatar">
-                                        </div>
-                                        <!-- Info -->
-                                        <div class="ms-2">
-                                            <h6 class="mb-0">Billy Vasquez</h6>
-                                            <p class="mb-0 small">Tutor of chemistry</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Mentor Item -->
-                                    <div class="d-flex align-items-center">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-sm">
-                                            <img class="avatar-img rounded-1" src="/assets/images/avatar/02.jpg" alt="avatar">
-                                        </div>
-                                        <!-- Info -->
-                                        <div class="ms-2">
-                                            <h6 class="mb-0">Larry Lawson</h6>
-                                            <p class="mb-0 small">Tutor of technology</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- Row END -->
-
-                        <div class="row mt-5 mt-xl-0">
-                            <!-- Rating -->
-                            <div class="col-7 mt-0 mt-xl-5 text-end position-relative z-index-1 d-none d-md-block">
-                                <!-- SVG -->
-                                <figure	class="fill-danger position-absolute top-0 start-50 mt-n7 ms-6 ps-3 pt-2 z-index-n1 d-none d-lg-block">
-                                    <svg enable-background="new 0 0 160.7 159.8" height="180px">
-                                        <path d="m153.2 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m116.4 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m134.8 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m135.1 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m153.5 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m98.3 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <ellipse cx="116.7" cy="99.1" rx="2.1" ry="2.2" />
-                                        <path d="m153.2 149.8c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.3 0.9-2.2 2.1-2.2z" />
-                                        <path d="m135.1 132.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2 0-1.3 0.9-2.2 2.1-2.2z" />
-                                        <path d="m153.5 132.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.3 0.9-2.2 2.1-2.2z" />
-                                        <path d="m80.2 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z" />
-                                        <path d="m117 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m98.6 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m135.4 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m153.8 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m80.6 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <ellipse cx="98.9" cy="63.9" rx="2.1" ry="2.2" />
-                                        <path d="m117.3 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <ellipse cx="62.2" cy="63.9" rx="2.1" ry="2.2" />
-                                        <ellipse cx="154.1" cy="63.9" rx="2.1" ry="2.2" />
-                                        <path d="m135.7 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m154.4 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m80.9 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m44.1 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m99.2 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z" />
-                                        <ellipse cx="117.6" cy="46.3" rx="2.1" ry="2.2" />
-                                        <path d="m136 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m62.5 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m154.7 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <path d="m62.8 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <ellipse cx="136.3" cy="28.6" rx="2.1" ry="2.2" />
-                                        <path d="m99.6 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m117.9 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z" />
-                                        <path d="m81.2 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z" />
-                                        <path d="m26 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z" />
-                                        <ellipse cx="44.4" cy="28.6" rx="2.1" ry="2.2" />
-                                        <path d="m136.6 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z" />
-                                        <path d="m155 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z" />
-                                        <path d="m26.3 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z" />
-                                        <path d="m81.5 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z" />
-                                        <path d="m63.1 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z" />
-                                        <path d="m44.7 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z" />
-                                        <path d="m118.2 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z" />
-                                        <path d="m7.9 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z" />
-                                        <path d="m99.9 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2z" />
-                                    </svg>
-                                </figure>
-
-                                <div class="p-3 bg-primary d-inline-block rounded-4 shadow-lg text-center" style="background:url(assets/images/pattern/02.png) no-repeat center center; background-size:cover;">
-                                    <!-- Info -->
-                                    <h5 class="text-white mb-0">4.5/5.0</h5>
-                                    <!-- Rating -->
-                                    <ul class="list-inline mb-2">
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-                                    </ul>
-                                    <p class="text-white mb-0">Based on 3265 ratings</p>
-                                </div>
-                            </div>
-
-                            <!-- Review -->
-                            <div class="col-md-5 mt-n6 mb-0 mb-md-5">
-                                <div class="bg-body shadow text-center p-4 rounded-3">
-                                    <!-- Avatar -->
-                                    <div class="avatar avatar-xl mb-3">
-                                        <img class="avatar-img rounded-circle" src="/assets/images/avatar/03.jpg" alt="avatar">
-                                    </div>
-                                    <!-- Content -->
-                                    <blockquote>
-                                        <p>
-                                            <span class="me-1 small"><i class="fas fa-quote-left"></i></span>
-                                            At weddings believed laughing although the Moonlight newspaper up its enjoyment agreeable depending.
-                                            <span class="ms-1 small"><i class="fas fa-quote-right"></i></span>
-                                        </p>
-                                    </blockquote>
-                                    <!-- Rating -->
-                                    <ul class="list-inline mb-2">
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-                                    </ul>
-                                    <!-- Info -->
-                                    <h6 class="mb-0">Dennis Barrett</h6>
-                                </div>
-                            </div>
-                        </div> <!-- Row END -->
+                    <div class="col-xl-7 order-2 order-xl-1 d-flex justify-content-center">
+                        <img src="/images/opinion.png" style="max-width: 100%">
                     </div>
                     <div class="col-xl-5 order-1 text-center text-xl-start">
                         <!-- Title -->
-                        <h2 class="fs-1">Some valuable feedback from our students</h2>
-                        <p>Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty direct me so. Departure defective arranging rapturous did believe him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how.</p>
-                        <a href="index.html#" class="btn btn-primary mb-0">View Reviews</a>
+                        <h2 class="fs-2">Повышение осведомленности по вопросам информационной безопасности – </h2>
+                        <p>
+                            один из важнейших этапов внедрения систем защиты информации, который направлен на обучение и поддержание знаний в актуальном состоянии. Для достижения максимального результата платформа предлагает наиболее эффективные и удобные методики обучения.                        </p>
+                        <a href="index.html#" class="btn btn-primary mb-0">Начать обучение</a>
                     </div>
                 </div> <!-- Row END -->
             </div>
