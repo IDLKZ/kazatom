@@ -16,9 +16,9 @@
                         <!-- Title -->
                         <h1 class="display-1 text-danger mb-0">404</h1>
                         <!-- Subtitle -->
-                        <h2>Oh no, something went wrong!</h2>
+                        <h2>Упс, кажись вы ошиблись адресом</h2>
                         <!-- info -->
-                        <p class="mb-4">Either something went wrong or this page doesn't exist anymore.</p>
+                        <p class="mb-4">Или здесь скоро будет страница, осталось подождать чуть-чуть</p>
                         <!-- Button -->
                         <a href="{{route('index')}}" class="btn btn-primary mb-0">На главную</a>
                     </div>

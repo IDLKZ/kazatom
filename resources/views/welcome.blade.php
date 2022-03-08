@@ -166,7 +166,19 @@
 
                         <div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
                             <!-- Button -->
-                            <a href="index.html#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать обучение</a>
+                            <!-- Buttons -->
+                                @if(auth()->check())
+                                    @if(auth()->user()->role_id == 3)
+                                            <a href="{{route('studentHome')}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать</a>
+                                        @elseif(auth()->user()->role_id == 1)
+                                            <a href="{{route('adminHome')}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать</a>
+
+                                        @else
+                                            <a href="{{route('instructorHome')}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать</a>
+                                        @endif
+                                @else
+                                    <a href="{{route('login')}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Начать</a>
+                                @endif
                         </div>
                     </div>
                     <!-- Left content END -->
@@ -396,7 +408,22 @@
                         <h2 class="fs-2">Повышение осведомленности по вопросам информационной безопасности – </h2>
                         <p>
                             один из важнейших этапов внедрения систем защиты информации, который направлен на обучение и поддержание знаний в актуальном состоянии. Для достижения максимального результата платформа предлагает наиболее эффективные и удобные методики обучения.                        </p>
-                        <a href="index.html#" class="btn btn-primary mb-0">Начать обучение</a>
+                        <!-- Buttons -->
+                            {{--                                            <a href="course-detail.html#" class="btn btn-outline-primary mb-0">Free trial</a>--}}
+                            @if(auth()->check())
+                                @if(auth()->user()->role_id == 3)
+                                        <a href="{{route('studentHome')}}" class="btn btn-blue mb-0">Начать</a>
+
+                                    @elseif(auth()->user()->role_id == 1)
+                                        <a href="{{route('adminHome')}}" class="btn btn-blue mb-0">Начать</a>
+
+                                    @else
+                                        <a href="{{route('instructorHome')}}" class="btn btn-blue mb-0">Начать</a>
+                                    @endif
+                            @else
+                                <a href="{{route('login')}}" class="btn btn-blue mb-0">Начать</a>
+                            @endif
+
                     </div>
                 </div> <!-- Row END -->
             </div>
