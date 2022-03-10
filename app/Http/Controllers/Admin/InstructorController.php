@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Result;
 use App\User;
@@ -60,7 +61,9 @@ class InstructorController extends Controller
      */
     public function show($id)
     {
-        //
+        $courses = Course::where("user_id",$id)->with('user', 'level')->withCount(["videos","quizes"])->paginate(10);
+        return view('admin.instructors.courses', compact('courses'));
+
     }
 
     /**
@@ -71,7 +74,14 @@ class InstructorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $instructor = User::find($id);
+        if($instructor){
+            return view('admin.instructors.edit', compact('instructor'));
+
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -83,7 +93,25 @@ class InstructorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'nullable|image',
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'sometimes|nullable|min:4'
+        ]);
+        $data = $request->all();
+        if($data["password"] != null){
+            $data['password'] = bcrypt($request['password']);
+        }
+        else{
+            unset($data["password"]);
+        }
+        $user = User::find($id);
+        $user->edit($data, 'image');
+        if ($request['image']){
+            $user->uploadFile($request['image'], 'image');
+        }
+        return redirect()->route("instructors.index");
     }
 
     /**
@@ -100,5 +128,10 @@ class InstructorController extends Controller
         }
         $ins->delete();
         return redirect(route('instructors.index'));
+    }
+
+    public function students($id){
+        $students = User::whereIn("id", Result::whereIn("course_id",Course::where("user_id",$id)->pluck("id")->toArray())->pluck("user_id")->toArray())->paginate(8);
+        return view("admin.instructors.students",compact("students"));
     }
 }

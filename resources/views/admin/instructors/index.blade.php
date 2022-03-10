@@ -72,7 +72,7 @@
                                                         </div>
                                                         <!-- Info -->
                                                         <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
-                                                            <h5 class="mb-0"><a href="javascript:void (0)">{{$instructor->name}}</a></h5>
+                                                            <h5 class="mb-0"><a href="{{route("instructors.edit",$instructor->id)}}">{{$instructor->name}}</a></h5>
 {{--                                                            <p class="mb-0 small">Web Designer</p>--}}
                                                         </div>
                                                     </div>
@@ -102,7 +102,7 @@
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                                         <div class="d-flex align-items-center">
                                                             <div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle flex-shrink-0"><i class="fas fa-user-graduate fa-fw"></i></div>
-                                                            <h6 class="mb-0 ms-2 fw-light">Всего студентов</h6>
+                                                            <a href="{{route("instructor-student",$instructor->id)}}" class="mb-0 ms-2 fw-light">Всего студентов</a>
                                                         </div>
                                                         <span class="mb-0 fw-bold">{{array_key_exists($instructor->id, $students) ? count($students[$instructor->id]) : 0}}</span>
                                                     </div>
@@ -111,7 +111,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="d-flex align-items-center">
                                                             <div class="icon-md bg-purple bg-opacity-10 text-purple rounded-circle flex-shrink-0"><i class="fas fa-book fa-fw"></i></div>
-                                                            <h6 class="mb-0 ms-2 fw-light">Всего курсов</h6>
+                                                            <a href="{{route("instructors.show",$instructor->id)}}" class="mb-0 ms-2 fw-light">Всего курсов</a>
                                                         </div>
                                                         <span class="mb-0 fw-bold">{{$instructor->courses->count()}}</span>
                                                     </div>

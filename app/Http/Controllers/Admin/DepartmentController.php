@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Department;
 use App\Http\Controllers\Controller;
+use App\Level;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categories = Category::withCount("courses")->get();
-        return view('admin.categories.index', compact('categories'));
+        $departments = Department::all();
+        return view('admin.department.index', compact('departments'));
     }
 
     /**
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.department.create');
     }
 
     /**
@@ -38,8 +39,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, ['title' => 'required']);
-        Category::create(['title' => $request['title']]);
-        return redirect()->back();
+        Department::create(['title' => $request['title']]);
+        return redirect(route('department.index'));
     }
 
     /**
@@ -61,8 +62,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.categories.edit', compact('category'));
+        $department = Department::find($id);
+        return view('admin.department.edit', compact('department'));
     }
 
     /**
@@ -75,9 +76,9 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, ['title' => 'required']);
-        $category = Category::find($id);
-        $category->update(['title' => $request['title']]);
-        return redirect(route('categories.index'));
+        $department = Department::find($id);
+        $department->update(['title' => $request['title']]);
+        return redirect(route('department.index'));
     }
 
     /**
@@ -88,11 +89,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::with('courses')->where('id', $id)->first();
-        foreach ($category->courses  as $course){
-            $course->removeAll($course);
-        }
-        $category->delete();
-        return redirect()->back();
+        $department = Department::find($id);
+//        foreach ($level->courses  as $course){
+//            $course->removeAll($course);
+//        }
+        $department->delete();
+        return redirect(route('department.index'));
     }
 }

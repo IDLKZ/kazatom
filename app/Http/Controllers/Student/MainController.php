@@ -13,7 +13,8 @@ class MainController extends Controller
     public function index()
     {
         $results = Result::with('course', 'course.videos')->where('user_id', auth()->id())->get();
-        return view('student.index', compact('results'));
+        $courses = Course::whereNotIn("id",Result::where(["user_id"=>auth()->id()])->withCount("videos")->pluck("course_id")->toArray())->get();
+        return view('student.index', compact('results',"courses"));
     }
 
     public function editProfile()

@@ -13,6 +13,7 @@
             <!-- Menu item 3 -->
             <li class="nav-item"> <a class="nav-link" href="{{route('categories.index')}}"><i class="fas fa-layer-group fa-fw me-2"></i>Категории</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('levels.index')}}"><i class="fas fa-code fa-fw me-2"></i>Уровни</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('department.index')}}"><i class="fas fa-users fa-fw me-2"></i>Отделы</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('courses.index')}}"><i class="bi bi-basket fa-fw me-2"></i>Курсы</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('instructors.index')}}"><i class="fas fa-user-tie fa-fw me-2"></i>Инструкторы</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('students.index')}}"><i class="fas fa-user-graduate fa-fw me-2"></i>Сотрудники</a></li>

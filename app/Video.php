@@ -26,7 +26,7 @@ class Video extends Model
     /**
      * @var array
      */
-    protected $fillable = ['course_id', 'title', 'url', 'created_at', 'updated_at'];
+    protected $fillable = ['course_id', 'title',"description",'url',"prev_video","next_video", 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -34,5 +34,18 @@ class Video extends Model
     public function course()
     {
         return $this->belongsTo('App\Course');
+    }
+
+    public function quizes()
+    {
+        return $this->hasMany('App\Quiz',"video_id","id");
+    }
+
+    public function prevVideo(){
+        return $this->belongsTo('App\Video',"prev_video","id");
+    }
+
+    public function nextVideo(){
+        return $this->belongsTo('App\Video',"next_video","id");
     }
 }

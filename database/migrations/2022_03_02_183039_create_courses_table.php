@@ -15,13 +15,13 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->foreignId("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId("category_id")->references("id")->on("categories")->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId("level_id")->references("id")->on("levels")->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("user_id")->nullable()->references("id")->on("users")->onDelete("set null")->cascadeOnUpdate();
+            $table->foreignId("category_id")->nullable()->references("id")->on("categories")->onDelete("set null")->cascadeOnUpdate();
+            $table->foreignId("level_id")->nullable()->references("id")->on("levels")->onDelete("set null")->cascadeOnUpdate();
             $table->string('title');
             $table->string('short_description')->nullable();
             $table->text('description');
-            $table->string('deadline');
+            $table->timestamp('deadline');
             $table->string('image')->nullable();
             $table->timestamps();
         });

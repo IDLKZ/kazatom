@@ -35,6 +35,9 @@ class Course extends Model
      * @var array
      */
     protected $fillable = ['user_id', 'category_id', 'level_id', 'title', 'short_description', 'description', 'deadline', 'image', 'created_at', 'updated_at'];
+    protected $casts = [
+        'deadline'  => 'date:dd/mm/yyyy',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

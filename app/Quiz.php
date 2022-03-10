@@ -35,10 +35,13 @@ class Quiz extends Model
      */
     protected $keyType = 'integer';
 
+    protected $casts = [
+        "correct"=>"json"
+    ];
     /**
      * @var array
      */
-    protected $fillable = ['course_id', 'question', 'a', 'b', 'c', 'd', 'correct', 'created_at', 'updated_at'];
+    protected $fillable = ['course_id', "video_id",'question', 'a', 'b', 'c', 'd', 'correct', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

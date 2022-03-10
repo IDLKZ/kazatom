@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Course;
 use App\Http\Controllers\Controller;
+use App\Level;
+use \App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class CourseController extends Controller
 {
@@ -15,7 +20,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::with('user', 'level')->paginate(10);
+        $courses = Course::with('user', 'level')->withCount(["videos","quizes"])->paginate(10);
         return view('admin.courses.index', compact('courses'));
     }
 
@@ -26,7 +31,10 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $levels = Level::all();
+        $users = User::where("role_id",2)->get();
+        return view("admin.courses.create",compact("users","categories","levels"));
     }
 
     /**
@@ -37,7 +45,29 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $this->validate($request, [
+                'title' => 'required|min:3|max:70',
+                "user_id"=>"required|exists:users,id",
+                'short_description' => 'required|max:70',
+                'description' => 'required',
+                'deadline' => 'required',
+                'category_id' => 'required',
+                'level_id' => 'required',
+                'image' => 'nullable|image'
+            ]);
+            $data = $request->all();
+            $data["deadline"] = Carbon::createFromFormat('m/d/Y', $data["deadline"]);
+            $course = Course::add($data);
+            if ($request['image']){
+                $course->uploadFile($request['image'], 'image');
+            }
+            return  redirect()->route("courses.index");
+        }
+        catch (\Exception $exception){
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -59,7 +89,14 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        if($course = Course::find($id)){
+            $categories = Category::all();
+            $levels = Level::all();
+            $users = User::where("role_id",2)->get();
+            return view("admin.courses.edit",compact("users","categories","levels","course"));
+
+        }
+        return  redirect()->back();
     }
 
     /**
@@ -71,7 +108,31 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try{
+            $this->validate($request, [
+                'title' => 'required|min:3|max:70',
+                "user_id"=>"required|exists:users,id",
+                'short_description' => 'required|max:70',
+                'description' => 'required',
+                'deadline' => 'required',
+                'category_id' => 'required',
+                'level_id' => 'required',
+                'image' => 'nullable|image'
+            ]);
+            $data = $request->all();
+            $data["deadline"] = Carbon::createFromFormat('m/d/Y', $data["deadline"]);
+            $course = Course::find($id);
+            $course->edit($data, 'image');
+            if ($request['image']){
+                $course->uploadFile($request['image'], 'image');
+            }
+            return  redirect()->route("courses.index");
+        }
+        catch (\Exception $exception){
+            return redirect()->back();
+
+        }
+
     }
 
     /**

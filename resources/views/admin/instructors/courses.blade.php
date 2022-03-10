@@ -1,5 +1,6 @@
 @extends('layouts.admin.default')
 @section('content')
+
     <div class="page-content-wrapper border">
 
         <!-- Title -->
@@ -130,4 +131,5 @@
         </div>
         <!-- Card END -->
     </div>
+
 @endsection

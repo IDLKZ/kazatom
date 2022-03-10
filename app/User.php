@@ -29,7 +29,9 @@ class User extends Model
      */
     protected $fillable = [
         'name',
+        "department_id",
         'email',
+        "description",
         'password',
         'role_id',
         'image'
@@ -75,5 +77,10 @@ class User extends Model
     public function results()
     {
         return $this->hasMany('App\Result');
+    }
+
+    public function department(){
+        return $this->hasOne('App\Department');
+
     }
 }

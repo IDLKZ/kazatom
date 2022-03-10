@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Course;
 use App\Http\Controllers\Controller;
+use App\Quiz;
+use App\Video;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class QuizController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categories = Category::withCount("courses")->get();
-        return view('admin.categories.index', compact('categories'));
+
     }
 
     /**
@@ -24,9 +25,21 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if($request->get("course_id") || $request->get("video_id")){
+            $quizzes = $request->has("video_id")
+                ?Quiz::where("video_id",$request->get("video_id"))->get()
+                :Quiz::where(["course_id"=>$request->get("course_id"),"video_id"=>null])->get();
+            $course =  Course::find($request->get("course_id"));
+            $video = $request->has("video_id")
+                ? Video::find($request->get("video_id"))
+                :null;
+            return view("admin.quizzes.create",compact("course","quizzes","video"));
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -37,8 +50,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required']);
-        Category::create(['title' => $request['title']]);
+        $request->validate(["course_id"=>"required","video_id"=>"sometimes|nullable|exists:videos,id","a"=>"required","b"=>"required","c"=>"required","d"=>"required","correct"=>"required"]);
+        $data = $request->all();
+        try{
+           $quiz = Quiz::add($data);
+        }
+        catch (\Exception $e){
+        }
         return redirect()->back();
     }
 
@@ -61,8 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.categories.edit', compact('category'));
+        //
     }
 
     /**
@@ -74,10 +91,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['title' => 'required']);
-        $category = Category::find($id);
-        $category->update(['title' => $request['title']]);
-        return redirect(route('categories.index'));
+        //
     }
 
     /**
@@ -88,11 +102,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::with('courses')->where('id', $id)->first();
-        foreach ($category->courses  as $course){
-            $course->removeAll($course);
-        }
-        $category->delete();
+        Quiz::destroy($id);
         return redirect()->back();
     }
 }

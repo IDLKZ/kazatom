@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\StudentController;
@@ -13,7 +14,8 @@ use App\Http\Controllers\Instructor\StudentController as InstructorStudentContro
 use App\Http\Controllers\Student\MainController as StudentMainController;
 use App\Http\Controllers\Student\CourseController as StudentCourseController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,10 +48,13 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::resource('categories', CategoryController::class)->except('show');
         Route::resource('levels', LevelController::class)->except('show');
-        Route::resource('courses', CourseController::class)->except('edit', 'update', 'show');
-        Route::resource('instructors', InstructorController::class)->except('edit', 'update', 'show');
-        Route::resource('students', StudentController::class)->except('edit', 'update', 'show');
-
+        Route::resource('courses', CourseController::class);
+        Route::resource("videos",VideoController::class);
+        Route::resource('instructors', InstructorController::class);
+        Route::get('instructor-student/{id}', [InstructorController::class,"students"])->name("instructor-student");
+        Route::resource('students', StudentController::class);
+        Route::resource("quizzes",QuizController::class);
+        Route::resource("department",DepartmentController::class);
 //        SEARCH
         Route::get('search', [AdminMainController::class, 'search'])->name('adminSearch');
     });

@@ -55,7 +55,7 @@
                         <div class="card bg-transparent border rounded-3">
                             <!-- Card header START -->
                             <div class="card-header bg-transparent border-bottom">
-                                <h3 class="mb-0">Список моих курсов</h3>
+                                <h3 class="mb-0">Мои курсы</h3>
                             </div>
                             <!-- Card header END -->
 
@@ -63,16 +63,6 @@
                             <div class="card-body">
 
                                 <!-- Search and select START -->
-{{--                                <div class="row g-3 align-items-center justify-content-between mb-4">--}}
-{{--                                    <!-- Content -->--}}
-{{--                                    <div class="col-md-12">--}}
-{{--                                        <form class="rounded position-relative">--}}
-{{--                                            <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">--}}
-{{--                                            <button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>--}}
-{{--                                        </form>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-                                <!-- Search and select END -->
 
                                 <!-- Course list table START -->
                                 <div class="table-responsive border-0">
@@ -151,6 +141,9 @@
                             </div>
                             <!-- Card body START -->
                         </div>
+
+{{--                        All courses--}}
+
                         <!-- Main content END -->
                     </div><!-- Row END -->
                 </div>

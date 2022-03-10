@@ -89,9 +89,9 @@ class LevelController extends Controller
     public function destroy($id)
     {
         $level = Level::with('courses')->where('id', $id)->first();
-        foreach ($level->courses  as $course){
-            $course->removeAll($course);
-        }
+//        foreach ($level->courses  as $course){
+//            $course->removeAll($course);
+//        }
         $level->delete();
         return redirect(route('levels.index'));
     }

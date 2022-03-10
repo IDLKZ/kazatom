@@ -66,6 +66,7 @@
                         <thead>
                         <tr>
                             <th scope="col" class="border-0 rounded-start">Наименование категории</th>
+                            <th scope="col" class="border-0 rounded-start">Количество курсов</th>
                             <th scope="col" class="border-0 rounded-end">Действие</th>
                         </tr>
                         </thead>
@@ -78,6 +79,7 @@
                                 <tr>
                                     <!-- Table data -->
                                     <td>{{$category->title}}</td>
+                                    <td>{{$category->courses_count}}</td>
 
                                     <!-- Table data -->
                                     <td class="d-flex">
