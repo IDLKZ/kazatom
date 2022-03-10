@@ -15,17 +15,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        $profile = User::with('courses.videos')->where('id', auth()->id())->first();
-        $students = [];
-        foreach ($profile->courses as $course){
-            if ($course->results->count() > 0){
-                foreach ($course->results as $result){
-                    $students[$result->user->id] = $course->results;
-                }
-            }
-        }
+        $courses = Course::where('user_id', auth()->id())->with('user', 'level')->withCount(["videos","quizes"])->paginate(10);
 
-        return view('instructor.index', compact('profile', 'students'));
+        return view('instructor.index', compact( 'courses'));
     }
 
     public function editProfile()

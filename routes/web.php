@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Instructor\VideoController as InstructorVideoController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\StudentController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Student\MainController as StudentMainController;
 use App\Http\Controllers\Student\CourseController as StudentCourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Instructor\QuizController as InstructorQuizController;
 use App\Http\Controllers\Admin\DepartmentController;
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +89,11 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::get('send-envelope/{id}', [InstructorMainController::class, 'getEnvelope'])->name('instructorGetSendEnvelope');
         Route::post('send-envelope', [InstructorMainController::class, 'postEnvelope'])->name('instructorPostSendEnvelope');
+
+
+        Route::resource('courses', InstructorCourseController::class);
+        Route::resource("videos",InstructorVideoController::class);
+        Route::resource("quizzes",InstructorQuizController::class);
     });
 
     Route::group(['prefix' => 'student'], function (){
