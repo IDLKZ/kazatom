@@ -29,7 +29,7 @@
                                     <span class="display-6 lh-1 text-orange mb-0"><i class="fas fa-tv fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-{{--                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->count()}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$results->count()}}</h5>--}}
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$courses->count()}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$courses->count()}}</h5>
                                         </div>
                                         <p class="mb-0 h6 fw-light">Всего курсов</p>
                                     </div>
@@ -43,7 +43,7 @@
                                     <span class="display-6 lh-1 text-success mb-0"><i class="fas fa-medal fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-{{--                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->where('status', 1)->count()}}" data-purecounter-delay="300" data-purecounter-duration="0">{{$results->where('status', 1)->count()}}</h5>--}}
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$outputs}}" data-purecounter-delay="300" data-purecounter-duration="0">{{$outputs}}</h5>
                                         </div>
                                         <p class="mb-0 h6 fw-light">Завершенные курсы</p>
                                     </div>

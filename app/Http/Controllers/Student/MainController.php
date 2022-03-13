@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Student;
 
 use App\Course;
 use App\Http\Controllers\Controller;
+use App\Output;
 use App\Result;
 use App\User;
 use Illuminate\Http\Request;
@@ -15,12 +16,8 @@ class MainController extends Controller
         $results = Result::with('course', 'course.videos')->where('user_id', auth()->id())->get();
 //        $courses = Course::whereNotIn("id",Result::with('course.videos')->where(["user_id"=>auth()->id()])->pluck("course_id")->toArray())->get();
         $courses = Course::with('videos', 'outputs')->paginate(10);
-//        $results = [];
-//        foreach ($data as $result) {
-//            $results[$result->course_id] = $result->course;
-//        }
-//        dd($courses);
-        return view('student.index', compact('results',"courses"));
+        $outputs = Output::where(['user_id' => auth()->id(), 'status' => 1])->count();
+        return view('student.index', compact('results',"courses", 'outputs'));
     }
 
     public function editProfile()
