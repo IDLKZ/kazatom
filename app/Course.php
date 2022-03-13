@@ -79,6 +79,11 @@ class Course extends Model
         return $this->hasMany('App\Result');
     }
 
+    public function outputs()
+    {
+        return $this->hasMany('App\Output');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

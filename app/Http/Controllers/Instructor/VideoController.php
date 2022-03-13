@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Instructor;
 
 use App\Course;
 use App\Http\Controllers\Controller;
+use App\Result;
 use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -58,17 +59,13 @@ class VideoController extends Controller
             $validation_rule["prev_video"] = "required|exists:videos,id";
         }
         $this->validate($request, $validation_rule);
-        try{
-            $data = $request->all();
-            $v = Video::add($data);
-            $v->uploadFile($request['url'], 'url');
-            if($v_id = $request->get("prev_video")){
-                Video::where('id', $v_id)
-                    ->update(['next_video' => $v->id]);
-            }
-        }
-        catch (\Exception $e){
-            dd($e);
+
+        $data = $request->all();
+        $v = Video::add($data);
+        $v->uploadFile($request['url'], 'url');
+        if ($v_id = $request->get("prev_video")) {
+            Video::where('id', $v_id)
+                ->update(['next_video' => $v->id]);
         }
         return redirect()->back();
 
@@ -119,18 +116,16 @@ class VideoController extends Controller
                 'title' => 'required',
                 'url' => 'sometimes|nullable|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi'
             ]);
-            try {
-                $data = $request->only("title","description");
-                $video->update($data);
-                $video->save();
-                if($request->hasFile("url")){
-                    $video->uploadFile($request['url'], 'url');
-                }
-                return redirect(route('videos.create', ["course_id"=>Crypt::encrypt($video->course_id)]));
-            } catch (\Exception $e) {
-                return redirect()->back();
+
+            $data = $request->only("title", "description");
+            $video->update($data);
+            $video->save();
+            if ($request->hasFile("url")) {
+                $video->uploadFile($request['url'], 'url');
             }
+            return redirect(route('videos.create', ["course_id" => Crypt::encrypt($video->course_id)]));
         }
+        return abort(404);
 
     }
 
@@ -142,7 +137,7 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        $v = Video::find($id);
+        $v = Video::with('results')->where('id', $id)->first();
         $v->remove('url');
         return redirect()->back();
     }

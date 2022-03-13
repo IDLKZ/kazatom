@@ -13,7 +13,13 @@ class MainController extends Controller
     public function index()
     {
         $results = Result::with('course', 'course.videos')->where('user_id', auth()->id())->get();
-        $courses = Course::whereNotIn("id",Result::where(["user_id"=>auth()->id()])->withCount("videos")->pluck("course_id")->toArray())->get();
+//        $courses = Course::whereNotIn("id",Result::with('course.videos')->where(["user_id"=>auth()->id()])->pluck("course_id")->toArray())->get();
+        $courses = Course::with('videos', 'outputs')->paginate(10);
+//        $results = [];
+//        foreach ($data as $result) {
+//            $results[$result->course_id] = $result->course;
+//        }
+//        dd($courses);
         return view('student.index', compact('results',"courses"));
     }
 

@@ -29,7 +29,7 @@
                                     <span class="display-6 lh-1 text-orange mb-0"><i class="fas fa-tv fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->count()}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$results->count()}}</h5>
+{{--                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->count()}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$results->count()}}</h5>--}}
                                         </div>
                                         <p class="mb-0 h6 fw-light">Всего курсов</p>
                                     </div>
@@ -43,7 +43,7 @@
                                     <span class="display-6 lh-1 text-success mb-0"><i class="fas fa-medal fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->where('status', 1)->count()}}" data-purecounter-delay="300" data-purecounter-duration="0">{{$results->where('status', 1)->count()}}</h5>
+{{--                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$results->where('status', 1)->count()}}" data-purecounter-delay="300" data-purecounter-duration="0">{{$results->where('status', 1)->count()}}</h5>--}}
                                         </div>
                                         <p class="mb-0 h6 fw-light">Завершенные курсы</p>
                                     </div>
@@ -80,36 +80,37 @@
                                         <!-- Table body START -->
                                         <tbody>
                                             <!-- Table item -->
-                                            @if(count($results) > 0)
-                                                @foreach($results as $item)
+                                            @if(count($courses) > 0)
+                                                @foreach($courses as $item)
+
                                                     <tr>
                                                         <!-- Table data -->
                                                         <td>
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Image -->
                                                                 <div class="w-100px">
-                                                                    <img src="{{$item->course->getFile('image')}}" class="rounded" alt="">
+                                                                    <img src="{{$item->getFile('image')}}" class="rounded" alt="">
                                                                 </div>
                                                                 <div class="mb-0 ms-2">
                                                                     <!-- Title -->
-                                                                    <h6><a href="{{route('studentListVideoCourse', $item->course->id)}}">{{$item->course->title}}</a></h6>
+                                                                    <h6><a href="{{route('studentListVideoCourse', $item->id)}}">{{$item->title}}</a></h6>
                                                                     <!-- Info -->
                                                                 </div>
                                                             </div>
                                                         </td>
 
                                                         <!-- Table data -->
-                                                        <td>{{$item->course->videos->count()}}</td>
+                                                        <td>{{$item->videos->count()}}</td>
 
                                                         <!-- Table data -->
-                                                        <td>{{$item->course->deadline}}</td>
+                                                        <td>{{$item->deadline->format('d-m-Y')}}</td>
 
                                                         <!-- Table data -->
                                                         <td>
-                                                            @if($item->status)
-                                                                <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Завершено</button>
+                                                            @if($item->outputs->where('user_id', auth()->id())->first() != null && $item->outputs->where('user_id', auth()->id())->first()->status == 1)
+                                                                <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Завершен</button>
                                                             @else
-                                                                <a href="{{route('studentListVideoCourse', $item->course->id)}}" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Продолжить</a>
+                                                                <a href="{{route('studentListVideoCourse', $item->id)}}" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Продолжить</a>
                                                             @endif
                                                         </td>
                                                     </tr>

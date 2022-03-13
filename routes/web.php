@@ -91,9 +91,9 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('send-envelope', [InstructorMainController::class, 'postEnvelope'])->name('instructorPostSendEnvelope');
 
 
-        Route::resource('courses', InstructorCourseController::class);
-        Route::resource("videos",InstructorVideoController::class);
-        Route::resource("quizzes",InstructorQuizController::class);
+        Route::resource('in-courses', InstructorCourseController::class);
+        Route::resource("in-videos",InstructorVideoController::class);
+        Route::resource("in-quizzes",InstructorQuizController::class);
     });
 
     Route::group(['prefix' => 'student'], function (){
@@ -105,7 +105,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/watch-course/{id}/{course_id}', [StudentCourseController::class, 'watch'])->name('studentWatchCourse');
 
         //        PASS EXAM
-        Route::get('pass-exam/{id}', [StudentCourseController::class, 'passExam'])->name('passExam');
+        Route::get('pass-exam/{course_id}/{video_id?}', [StudentCourseController::class, 'passExam'])->name('passExam');
         Route::post('check-exam', [StudentCourseController::class, 'checkExam'])->name('checkExam');
         //        EDIT PROFILE
         Route::get('edit-profile', [StudentMainController::class, 'editProfile'])->name('studentEditProfile');

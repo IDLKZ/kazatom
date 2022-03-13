@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Result;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
@@ -61,13 +63,24 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'role_id' => ['required']
         ]);
-
-        User::create([
-            'name' => $request['name'],
-            'role_id' => $request['role_id'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
+        $data = $request->all();
+        $data['password'] = Hash::make($request['password']);
+        $user = User::add($data);
+//        $resData = [];
+//        if ($user->role_id == 3){
+//            $courses = Course::with('videos')->get();
+//            foreach ($courses as $course) {
+//                $resData['user_id'] = $user->id;
+//                $resData['course_id'] = $course->id;
+//                if ($course->videos->count() > 0) {
+//                    foreach ($course->videos as $video) {
+//                        $resData['video_id'] = $video->id;
+//                        $resData['status'] = $video->prev_video == null ? 1 : 0;
+//                        Result::add($resData);
+//                    }
+//                }
+//            }
+//        }
 
         $credentials = $request->only('email', 'password');
 

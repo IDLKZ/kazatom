@@ -2,25 +2,25 @@
 
 namespace App;
 
-use App\Traits\Upload;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $course_id
  * @property integer $user_id
- * @property int $status
+ * @property integer $course_id
+ * @property integer $video_id
+ * @property string $result
  * @property string $created_at
  * @property string $updated_at
  * @property Course $course
+ * @property Video $video
  * @property User $user
  */
-class Result extends Model
+class Attempt extends Model
 {
-    use Upload;
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'integer';
@@ -28,7 +28,7 @@ class Result extends Model
     /**
      * @var array
      */
-    protected $fillable = ['course_id', 'user_id', 'video_id', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'course_id', 'video_id', 'result', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -36,6 +36,14 @@ class Result extends Model
     public function course()
     {
         return $this->belongsTo('App\Course');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function video()
+    {
+        return $this->belongsTo('App\Video');
     }
 
     /**

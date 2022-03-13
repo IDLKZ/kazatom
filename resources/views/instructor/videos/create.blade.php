@@ -1,4 +1,19 @@
 @extends('layouts.default')
+@push('css')
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+    <style>
+
+        .vjs-big-play-button {
+            width: 60px!important;
+            height: 50px!important;
+            margin: 0;
+            position: absolute!important;
+            top: 50%!important;
+            left: 50%!important;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endpush
 @section('content')
 
 
@@ -327,10 +342,10 @@
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
             .then( editor => {
-                console.log( editor );
+                // console.log( editor );
             } )
             .catch( error => {
-                console.error( error );
+                // console.error( error );
             } );
 
 
