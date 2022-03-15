@@ -8,7 +8,7 @@
                 <!-- logo -->
                 <a class="me-0" href="index.html">
                     <img class="light-mode-item h-40px" src="/images/logo.svg" alt="logo">
-                    <img class="dark-mode-item h-40px" src="/images/logo-light.svg" alt="logo">
+{{--                    <img class="dark-mode-item h-40px" src="/images/logo-light.svg" alt="logo">--}}
                 </a>
                 <p class="my-3">
                     Программа для повышения осведомленности по вопросам информационной безопасности

@@ -1,4 +1,12 @@
 @extends('layouts.default')
+@push('css')
+    <style>
+        .img-course {
+            width: 300px;
+            height: 225px;
+        }
+    </style>
+@endpush
 @section('content')
     <main>
 
@@ -85,7 +93,8 @@
                                         <div class="col-sm-6 col-lg-4 col-xl-3">
                                             <div class="card shadow h-100">
                                                 <!-- Image -->
-                                                <img src="{{$course->getFile('image')}}" class="card-img-top" alt="{{$course->title}}">
+                                                <div class="img-course" style='background: url("{{$course->getFile('image')}}") no-repeat center; background-size: contain'></div>
+{{--                                                <img src="{{$course->getFile('image')}}" class="card-img-top" alt="{{$course->title}}">--}}
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
                                                     <!-- Badge and favorite -->

@@ -6,7 +6,7 @@
             <!-- Logo START -->
             <a class="navbar-brand" href="{{route('index')}}">
                 <img class="light-mode-item navbar-brand-item" src="/images/logo.svg" alt="logo">
-                <img class="dark-mode-item navbar-brand-item" src="/images/logo-light.svg" alt="logo">
+{{--                <img class="dark-mode-item navbar-brand-item" src="/images/logo-light.svg" alt="logo">--}}
             </a>
             <!-- Logo END -->
 
