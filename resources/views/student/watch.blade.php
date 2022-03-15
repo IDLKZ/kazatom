@@ -148,4 +148,6 @@
 @endsection
 @push('js')
     <script src="assets/vendor/plyr/plyr.js"></script>
+
+
 @endpush

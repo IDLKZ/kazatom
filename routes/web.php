@@ -110,6 +110,8 @@ Route::group(['middleware' => 'auth'], function (){
         //        EDIT PROFILE
         Route::get('edit-profile', [StudentMainController::class, 'editProfile'])->name('studentEditProfile');
         Route::put('update-profile/{id}', [StudentMainController::class, 'updateProfile'])->name('studentUpdateProfile');
+
+        Route::get('get-certificate/{id}', [StudentMainController::class, 'getCertificate'])->name('studentGetCertificate');
     });
 });
 

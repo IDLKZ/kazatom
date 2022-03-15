@@ -141,6 +141,7 @@
     <script src="assets/vendor/plyr/plyr.js"></script>
     <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
     <script>
-
+        var myPlayer = videojs('my-video');
+        myPlayer.controlBar.progressControl.disable();
     </script>
 @endpush

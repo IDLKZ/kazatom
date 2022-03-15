@@ -71,7 +71,7 @@
                                         <thead>
                                         <tr>
                                             <th scope="col" class="border-0 rounded-start">Наименование курса</th>
-                                            <th scope="col" class="border-0">Количество видеоуроков</th>
+                                            <th scope="col" class="border-0">Кол.во уроков</th>
                                             <th scope="col" class="border-0">Дедлайн</th>
                                             <th scope="col" class="border-0 rounded-end">Действие</th>
                                         </tr>
@@ -95,6 +95,50 @@
                                                                     <!-- Title -->
                                                                     <h6><a href="{{route('studentListVideoCourse', $item->id)}}">{{$item->title}}</a></h6>
                                                                     <!-- Info -->
+                                                                    @if($item->results->where('user_id', auth()->id())->count() > 0)
+                                                                        <div class="overflow-hidden">
+                                                                            <h6 class="mb-0 text-end">
+                                                                                @if($item->outputs->where('user_id', auth()->id())->first() != null && $item->outputs->where('user_id', auth()->id())->first()->status)
+                                                                                    {{(round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0))}}%
+                                                                                @else
+                                                                                    {{round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0)-10}}%
+                                                                                @endif
+                                                                            </h6>
+                                                                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                                                                                <div
+                                                                                    class="progress-bar bg-primary aos aos-init aos-animate"
+                                                                                    role="progressbar"
+                                                                                    data-aos="slide-right"
+                                                                                    data-aos-delay="200"
+                                                                                    data-aos-duration="1000"
+                                                                                    data-aos-easing="ease-in-out"
+                                                                                    style="width:
+                                                                                    @if($item->outputs->where('user_id', auth()->id())->first() != null && $item->outputs->where('user_id', auth()->id())->first()->status)
+                                                                                        {{(round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0))}}%
+                                                                                    @else
+                                                                                        {{round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0)-10}}%
+                                                                                    @endif                                                                                         "
+                                                                                    aria-valuenow="
+                                                                                    @if($item->outputs->where('user_id', auth()->id())->first() != null && $item->outputs->where('user_id', auth()->id())->first()->status)
+                                                                                        {{(round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0))}}%
+                                                                                    @else
+                                                                                        {{round(($item->results->where('user_id', auth()->id())->where('status', 1)->count()/$item->results->where('user_id', auth()->id())->count())*100, 0)-10}}%
+                                                                                    @endif                                                                                    "
+                                                                                    aria-valuemin="0"
+                                                                                    aria-valuemax="100">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @else
+                                                                        <div class="overflow-hidden">
+                                                                            <h6 class="mb-0 text-end">0%</h6>
+                                                                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                                                                                <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endif
+
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -109,6 +153,7 @@
                                                         <td>
                                                             @if($item->outputs->where('user_id', auth()->id())->first() != null && $item->outputs->where('user_id', auth()->id())->first()->status == 1)
                                                                 <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Завершен</button>
+                                                                <a href="{{route('studentGetCertificate', $item->id)}}" class="btn btn-sm btn-light me-1"><i class="bi bi-arrow-repeat me-1"></i>Сертификат</a>
                                                             @else
                                                                 <a href="{{route('studentListVideoCourse', $item->id)}}" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Продолжить</a>
                                                             @endif
