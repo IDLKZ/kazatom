@@ -238,7 +238,7 @@
                         <!-- Course description -->
                         <div class="col-md-12 mt-4">
                             <label class="form-label">Описание видеоурока</label>
-                            <textarea name="description" id="editor"></textarea>
+{{--                            <textarea name="description" id="editor"></textarea>--}}
                             @if ($errors->has('description'))
                                 @foreach ($errors->get('description') as $message)
                                     <div>
