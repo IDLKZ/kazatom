@@ -132,7 +132,7 @@
 
                                     <!-- Card body START -->
                                     <div class="card-body">
-                                        <div class="table-responsive-lg border-0 rounded-3">
+                                        <div class="table-responsive-lg border-0 rounded-3 overflow-scroll">
                                             <!-- Table START -->
                                             <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
                                                 <!-- Table head -->
