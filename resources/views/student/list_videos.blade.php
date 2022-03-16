@@ -118,11 +118,13 @@
                                                                                         </a>
                                                                                         <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$material->title}}</span>
                                                                                 </div>
+                                                                                @if($video->results != null && $video->results->where(['user_id' => auth()->id(), 'video_id' => $video->id])->first()->status == 1)
                                                                                         <p class="mb-0 text-truncate">
                                                                                             <a href="{{$material->getFile('file')}}" download>
                                                                                                 Скачать
                                                                                             </a>
                                                                                         </p>
+                                                                                @endif
                                                                             </div>
                                                                         @endforeach
                                                                     @endif
