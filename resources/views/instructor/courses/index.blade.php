@@ -8,7 +8,7 @@
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
                 <h1 class="h3 mb-2 mb-sm-0">Курсы<span class="badge bg-orange bg-opacity-10 text-orange ms-3">{{$courses->count()}}</span></h1>
-                <a href="{{route("courses.create")}}" class="btn btn-sm btn-primary mb-0">Создать курс</a>
+                <a href="{{route("in-courses.create")}}" class="btn btn-sm btn-primary mb-0">Создать курс</a>
             </div>
         </div>
 
@@ -95,11 +95,11 @@
 
                                     <!-- Table data -->
                                     <td>
-                                        <a class="btn btn-sm btn-success mb-2" target="_blank" href="{{route("videos.create",["course_id"=>Crypt::encrypt($course->id)])}}">Видео</a><br>
+                                        <a class="btn btn-sm btn-success mb-2" target="_blank" href="{{route("in-videos.create",["course_id"=>Crypt::encrypt($course->id)])}}">Видео</a><br>
 
-                                        <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("quizzes.create",["course_id"=>$course->id])}}">Тесты</a><br>
-                                        <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("courses.edit",$course->id)}}">Изменить</a><br>
-                                        <form action="{{route('courses.destroy', $course->id)}}" method="post">
+                                        <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("in-quizzes.create",["course_id"=>$course->id])}}">Тесты</a><br>
+                                        <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("in-courses.edit",$course->id)}}">Изменить</a><br>
+                                        <form action="{{route('in-courses.destroy', $course->id)}}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button onclick="return confirm('Вы уверены ?')" class="btn btn-sm btn-danger mb-0">Удалить</button>

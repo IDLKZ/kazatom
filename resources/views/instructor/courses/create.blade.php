@@ -44,7 +44,7 @@
                                 <h4>Детали курса</h4>
 
                                 <hr> <!-- Divider -->
-                                <form action="{{route('courses.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('in-courses.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Basic information START -->
                                     <div class="row g-4">

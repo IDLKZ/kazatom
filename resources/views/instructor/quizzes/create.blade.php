@@ -43,7 +43,7 @@
                                     </div>
                                     <!-- Button -->
                                     <div class="d-flex align-items-center mt-2 mt-md-0">
-                                        <a href="{{route('courses.create')}}" class="btn btn-success mb-0">Создать курс</a>
+                                        <a href="{{route('in-courses.create')}}" class="btn btn-success mb-0">Создать курс</a>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                                                                 <!-- Button -->
                                                                                 <div class="align-middle">
                                                                                     {{--                                                                            <a href="instructor-create-course.html#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>--}}
-                                                                                    <form action="{{route('quizzes.destroy', $quiz->id)}}" method="post">
+                                                                                    <form action="{{route('in-quizzes.destroy', $quiz->id)}}" method="post">
                                                                                         @csrf
                                                                                         @method('delete')
                                                                                         <button type="submit" class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
@@ -206,7 +206,7 @@
 
     <!-- Modal -->
     <div class="modal modal-fullscreen fade" id="addQuestion" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="{{route('quizzes.store')}}" method="post">
+        <form action="{{route('in-quizzes.store')}}" method="post">
             @csrf
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">

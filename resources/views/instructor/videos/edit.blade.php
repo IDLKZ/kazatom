@@ -22,7 +22,7 @@
                         <!-- Card header -->
 
                         <!-- Card body START -->
-                        <form action="{{route("videos.update",$video->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route("in-videos.update",$video->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
                             <div class="card-body">

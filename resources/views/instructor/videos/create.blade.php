@@ -51,7 +51,7 @@
                                     </div>
                                     <!-- Button -->
                                     <div class="d-flex align-items-center mt-2 mt-md-0">
-                                        <a href="{{route('courses.create')}}" class="btn btn-success mb-0">Создать курс</a>
+                                        <a href="{{route('in-courses.create')}}" class="btn btn-success mb-0">Создать курс</a>
                                     </div>
                                 </div>
                             </div>
@@ -231,10 +231,10 @@
                                                                                 </div>
                                                                             </td>
                                                                             <td>
-                                                                                <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("quizzes.create",["course_id"=>$video->course_id,"video_id"=>$video->id])}}">Тесты</a><br>
-                                                                                <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("videos.edit",$video->id)}}">Изменить</a><br>
+                                                                                <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("in-quizzes.create",["course_id"=>$video->course_id,"video_id"=>$video->id])}}">Тесты</a><br>
+                                                                                <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("in-videos.edit",$video->id)}}">Изменить</a><br>
                                                                                 @if($video->next_video == null)
-                                                                                    <form action="{{route('videos.destroy', $video->id)}}" method="post">
+                                                                                    <form action="{{route('in-videos.destroy', $video->id)}}" method="post">
                                                                                         @csrf
                                                                                         @method('delete')
                                                                                         <button onclick="return confirm('Вы уверены ?')" class="btn btn-sm btn-danger mb-0">Удалить</button>
@@ -287,7 +287,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="{{route('videos.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('in-videos.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="modal-dialog">
                 <div class="modal-content">

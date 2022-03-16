@@ -29,7 +29,7 @@
                                 <h4>Детали курса</h4>
 
                                 <hr> <!-- Divider -->
-                                <form action="{{route('courses.update', $course->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('in-courses.update', $course->id)}}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <!-- Basic information START -->
