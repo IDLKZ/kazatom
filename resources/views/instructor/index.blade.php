@@ -177,11 +177,11 @@
 
                                                             <!-- Table data -->
                                                             <td>
-                                                                <a class="btn btn-sm btn-success mb-2" target="_blank" href="{{route("videos.create",["course_id"=>Crypt::encrypt($course->id)])}}">Видео</a><br>
+                                                                <a class="btn btn-sm btn-success mb-2" target="_blank" href="{{route("in-videos.create",["course_id"=>Crypt::encrypt($course->id)])}}">Видео</a><br>
 
-                                                                <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("quizzes.create",["course_id"=>$course->id])}}">Тесты</a><br>
-                                                                <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("courses.edit",$course->id)}}">Изменить</a><br>
-                                                                <form action="{{route('courses.destroy', $course->id)}}" method="post">
+                                                                <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("in-quizzes.create",["course_id"=>$course->id])}}">Тесты</a><br>
+                                                                <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("in-courses.edit",$course->id)}}">Изменить</a><br>
+                                                                <form action="{{route('in-courses.destroy', $course->id)}}" method="post">
                                                                     @csrf
                                                                     @method('delete')
                                                                     <button onclick="return confirm('Вы уверены ?')" class="btn btn-sm btn-danger mb-0">Удалить</button>
