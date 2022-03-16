@@ -53,4 +53,9 @@ class Video extends Model
     {
         return $this->belongsTo(Result::class, 'id', 'video_id');
     }
+
+    public function materials()
+    {
+        return $this->hasMany(Material::class);
+    }
 }

@@ -31,7 +31,7 @@ class CourseController extends Controller
         $output = Output::where(['user_id' => auth()->id(), 'course_id' => $id])->first();
 
         if ($res->count() > 0){
-            $videos = Video::with('results', 'course', 'quizes')->where('course_id', $id)->get();
+            $videos = Video::with('results', 'course', 'quizes', 'materials')->where('course_id', $id)->get();
             $first_video = Video::where(['course_id' => $id, 'prev_video' => null])->first();
 
             if ($videos->count() > 0){

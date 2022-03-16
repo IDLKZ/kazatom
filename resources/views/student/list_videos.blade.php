@@ -72,37 +72,66 @@
                                                 <!-- Item -->
 
                                                 @foreach($videos as $video)
-                                                    <div class="accordion-item mb-2 pb-2">
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <div class="position-relative d-flex align-items-center">
-                                                                @if($video->results != null && $video->results->where(['user_id' => auth()->id(), 'video_id' => $video->id])->first()->status == 1)
-                                                                    <a href="{{route('studentWatchCourse', ['id' => $video->id, 'course_id' => $video->course->id])}}" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
-                                                                        <i class="fas fa-play me-0"></i>
-                                                                    </a>
-                                                                    <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$video->title}}</span>
-                                                                @else
-                                                                    <a href="javascript:void (0)" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
-                                                                        <i class="fas fa-lock me-0"></i>
-                                                                    </a>
-                                                                    <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$video->title}}</span>
-                                                                @endif
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{$video->id}}" aria-expanded="true" aria-controls="collapseOne{{$video->id}}">
+                                                                <span class="mb-0 fw-bold">{{$video->title}}</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne{{$video->id}}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                                                            <div class="accordion-body px-3">
+                                                                <div class="vstack gap-3">
+                                                                    <!-- Course lecture -->
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <div class="position-relative d-flex align-items-center">
+                                                                            @if($video->results != null && $video->results->where(['user_id' => auth()->id(), 'video_id' => $video->id])->first()->status == 1)
+                                                                                <a href="{{route('studentWatchCourse', ['id' => $video->id, 'course_id' => $video->course->id])}}" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                                                    <i class="fas fa-play me-0"></i>
+                                                                                </a>
+                                                                                <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$video->title}}</span>
+                                                                            @else
+                                                                                <a href="javascript:void (0)" class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static">
+                                                                                    <i class="fas fa-lock me-0"></i>
+                                                                                </a>
+                                                                                <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$video->title}}</span>
+                                                                            @endif
+                                                                        </div>
+
+                                                                        @if($video->results != null && $video->results->where(['user_id' => auth()->id(), 'video_id' => $video->id])->first()->status == 1)
+                                                                            @if($video->quizes->count() > 0)
+                                                                                <p class="mb-0 text-truncate">
+                                                                                    <a href="{{route('passExam', ['course_id' => Crypt::encrypt($video->course->id), 'video_id' => Crypt::encrypt($video->id)])}}">
+                                                                                        Пройти тест
+                                                                                    </a>
+                                                                                </p>
+                                                                            @endif
+                                                                        @endif
+
+                                                                    </div>
+
+                                                                    @if($video->materials->count() > 0)
+                                                                        @foreach($video->materials as $material)
+                                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                                <div class="position-relative d-flex align-items-center">
+                                                                                        <a href="javascript:void (0)" class="btn btn-primary-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                                                            <i class="fas fa-file me-0"></i>
+                                                                                        </a>
+                                                                                        <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px">{{$material->title}}</span>
+                                                                                </div>
+                                                                                        <p class="mb-0 text-truncate">
+                                                                                            <a href="{{$material->getFile('file')}}" download>
+                                                                                                Скачать
+                                                                                            </a>
+                                                                                        </p>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    @endif
+
+                                                                </div>
                                                             </div>
-
-                                                            @if($video->results != null && $video->results->where(['user_id' => auth()->id(), 'video_id' => $video->id])->first()->status == 1)
-                                                                @if($video->quizes->count() > 0)
-                                                                        <p class="mb-0 text-truncate">
-                                                                            <a href="{{route('passExam', ['course_id' => Crypt::encrypt($video->course->id), 'video_id' => Crypt::encrypt($video->id)])}}">
-                                                                                Пройти тест
-                                                                            </a>
-                                                                        </p>
-                                                                @endif
-                                                            @endif
-
                                                         </div>
-{{--                                                        <div class="my-3">--}}
-{{--                                                            <a href="{{route('passExam', $video->course->id)}}" class="btn btn-primary-soft mb-0">Завершить курс</a>--}}
-{{--                                                        </div>--}}
                                                     </div>
+
                                                 @endforeach
                                             </div>
                                             <!-- Accordion END -->

@@ -16,8 +16,8 @@ class MainController extends Controller
     public function index()
     {
         $courses = Course::where('user_id', auth()->id())->with('user', 'level')->withCount(["videos","quizes"])->paginate(10);
-
-        return view('instructor.index', compact( 'courses'));
+        $users = User::all()->count();
+        return view('instructor.index', compact( 'courses', 'users'));
     }
 
     public function editProfile()

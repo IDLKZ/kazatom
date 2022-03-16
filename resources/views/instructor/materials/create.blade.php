@@ -97,7 +97,7 @@
                                 <div class="col-md-8 mx-auto text-center">
                                     <!-- Content -->
                                     <h4 class="text-center">
-                                        Добавить видео к {{$course->title}}
+                                        Добавить материал к {{$video->title}}
                                     </h4>
                                 </div>
                             </div>
@@ -115,9 +115,9 @@
                                             <!-- Step 2 content START -->
                                             <div id="step-2" role="tabpanel" class="content active dstepper-block" aria-labelledby="steppertrigger2">
                                                 <!-- Title -->
-                                                <h4>Видео</h4>
-                                                @if ($errors->has('url'))
-                                                    @foreach ($errors->get('url') as $message)
+                                                <h4>Файл</h4>
+                                                @if ($errors->has('file'))
+                                                    @foreach ($errors->get('file') as $message)
                                                         <div>
                                                             <span class="text-danger">{{$message}}</span>
                                                         </div>
@@ -149,11 +149,8 @@
                                                                 <!-- Table head -->
                                                                 <thead>
                                                                 <tr>
-                                                                    <th scope="col" class="border-0 rounded-start">Видео</th>
+{{--                                                                    <th scope="col" class="border-0 rounded-start">Файл</th>--}}
                                                                     <th scope="col" class="border-0">Наименование</th>
-                                                                    <th scope="col" class="border-0">Предыдущий урок</th>
-                                                                    <th scope="col" class="border-0">Следующий урок</th>
-                                                                    <th scope="col" class="border-0">Тест</th>
                                                                     <th scope="col" class="border-0 rounded-end">Действие</th>
                                                                 </tr>
                                                                 </thead>
@@ -161,87 +158,34 @@
                                                                 <!-- Table body START -->
                                                                 <tbody>
 
-                                                                @if($videos->count() > 0)
-                                                                    @foreach($videos as $video)
+                                                                @if($materials->count() > 0)
+                                                                    @foreach($materials as $material)
                                                                         <tr>
 
-                                                                            <!-- Table data -->
-                                                                            <td>
-                                                                                <div class="overflow-hidden fullscreen-video w-100">
-                                                                                    <!-- Full screen video START -->
-                                                                                    <video
-                                                                                        id="my-video"
-                                                                                        class="video-js"
-                                                                                        controls
-                                                                                        preload="auto"
-                                                                                        width="100%"
-                                                                                        poster="MY_VIDEO_POSTER.jpg"
-                                                                                        data-setup="{}"
-                                                                                    >
-                                                                                        <source src="{{$video->getFile('url')}}" type="video/mp4" />
-                                                                                        <p class="vjs-no-js">
-                                                                                            To view this video please enable JavaScript, and consider upgrading to a
-                                                                                            web browser that
-                                                                                            <a href="https://videojs.com/html5-video-support/" target="_blank"
-                                                                                            >supports HTML5 video</a
-                                                                                            >
-                                                                                        </p>
-                                                                                    </video>
-                                                                                    <!-- Full screen video END -->
-
-                                                                                    <!-- Plyr resources and browser polyfills are specified in the pen settings -->
-                                                                                </div>
-                                                                            </td>
-
                                                                             <td>
                                                                                 <div class="d-flex align-items-center mb-3">
                                                                                     <!-- Info -->
                                                                                     <div class="ms-2">
-                                                                                        <h6 class="mb-0 fw-light">{{$video->title}}</h6>
+                                                                                        <h6 class="mb-0 fw-light">{{$material->title}}</h6>
                                                                                     </div>
                                                                                 </div>
                                                                             </td>
-                                                                            <td>
-                                                                                <div class="d-flex align-items-center mb-3">
-                                                                                    <!-- Info -->
-                                                                                    @if($video->prevVideo)
-                                                                                        <div class="ms-2">
-                                                                                            <h6 class="mb-0 fw-light">{{$video->prevVideo->title}}</h6>
-                                                                                        </div>
-                                                                                    @endif
-                                                                                </div>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="d-flex align-items-center mb-3">
-                                                                                    <!-- Info -->
-                                                                                    @if($video->nextVideo)
-                                                                                        <div class="ms-2">
-                                                                                            <h6 class="mb-0 fw-light">{{$video->nextVideo->title}}</h6>
-                                                                                        </div>
-                                                                                    @endif
-                                                                                </div>
-                                                                            </td>
-                                                                            <!-- Table data -->
-                                                                            <td>
-                                                                                <div class="d-flex align-items-center mb-3">
-                                                                                    <!-- Info -->
-                                                                                    <div class="ms-2">
-                                                                                        <h6 class="mb-0 fw-light">{{$video->quizes_count}}</h6>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("in-quizzes.create",["course_id"=>$video->course_id,"video_id"=>$video->id])}}">Тесты</a><br>
-                                                                                <a class="btn btn-sm btn-warning mb-2" target="_blank" href="{{route("in-materials.create", ['video_id' => $video->id])}}">Материалы</a><br>
-                                                                                <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("in-videos.edit",$video->id)}}">Изменить</a><br>
-                                                                                @if($video->next_video == null)
-                                                                                    <form action="{{route('in-videos.destroy', $video->id)}}" method="post">
-                                                                                        @csrf
-                                                                                        @method('delete')
-                                                                                        <button onclick="return confirm('Вы уверены ?')" class="btn btn-sm btn-danger mb-0">Удалить</button>
-                                                                                    </form>
-                                                                                @endif
 
+                                                                            <td>
+                                                                                <a class="btn btn-sm btn-warning mb-2"
+                                                                                   target="_blank"
+                                                                                   href="{{$material->getFile('file')}}" download>Скачать</a><br>
+                                                                                <form
+                                                                                    action="{{route('in-materials.destroy', $material->id)}}"
+                                                                                    method="post">
+                                                                                    @csrf
+                                                                                    @method('delete')
+                                                                                    <button
+                                                                                        onclick="return confirm('Вы уверены ?')"
+                                                                                        class="btn btn-sm btn-danger mb-0">
+                                                                                        Удалить
+                                                                                    </button>
+                                                                                </form>
                                                                             </td>
                                                                         </tr>
                                                                     @endforeach
@@ -288,40 +232,19 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="{{route('in-videos.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('in-materials.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Добавить видеоурок</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Добавить материал</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="course_id" value="{{$course->id}}">
-                        <label for="titleVideo">Наименование видео</label>
+                        <input type="hidden" name="video_id" value="{{$video->id}}">
+                        <label for="titleVideo">Наименование файла</label>
                         <input type="text" name="title" class="form-control my-2" id="titleVideo">
-                        <input type="file" name="url">
-                        <!-- Course category -->
-                        <div class="col-md-12 mt-4">
-                            <label class="form-label">Предыдущий урок</label>
-                            <select name="prev_video" class="form-control">
-                                @foreach($available_videos as $available)
-                                    <option value="{{$available->id}}">{{$available->title}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <!-- Course description -->
-                        <div class="col-md-12 mt-4">
-                            <label class="form-label">Описание видеоурока</label>
-                            <textarea name="description" id="editor"></textarea>
-                            @if ($errors->has('description'))
-                                @foreach ($errors->get('description') as $message)
-                                    <div>
-                                        <span class="text-danger">{{$message}}</span>
-                                    </div>
-                                @endforeach
-                            @endif
-                        </div>
+                        <input type="file" name="file" class="form-control">
                     </div>
 
                     <div class="modal-footer">

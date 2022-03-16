@@ -82,7 +82,7 @@
                                     <span class="display-6 text-warning mb-0"><i class="fas fa-tv fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="" data-purecounter-delay="200" data-purecounter-duration="0"></h5>
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$courses->count()}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$courses->count()}}</h5>
                                         </div>
                                         <span class="mb-0 h6 fw-light">Всего курсов</span>
                                     </div>
@@ -94,7 +94,7 @@
                                     <span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
                                     <div class="ms-4">
                                         <div class="d-flex">
-                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="" data-purecounter-delay="200" data-purecounter-duration="0"></h5>
+                                            <h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$users}}" data-purecounter-delay="200" data-purecounter-duration="0">{{$users}}</h5>
 {{--                                            <span class="mb-0 h5">K+</span>--}}
                                         </div>
                                         <span class="mb-0 h6 fw-light">Всего студентов</span>

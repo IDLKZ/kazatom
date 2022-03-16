@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Instructor\MainController as InstructorMainController;
 use App\Http\Controllers\Instructor\CourseController as InstructorCourseController;
 use App\Http\Controllers\Instructor\StudentController as InstructorStudentController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\Student\MainController as StudentMainController;
 use App\Http\Controllers\Student\CourseController as StudentCourseController;
 use Illuminate\Support\Facades\Route;
@@ -94,6 +95,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('in-courses', InstructorCourseController::class);
         Route::resource("in-videos",InstructorVideoController::class);
         Route::resource("in-quizzes",InstructorQuizController::class);
+        Route::resource("in-materials",MaterialController::class)->except(['show', 'update', 'edit', 'index']);
     });
 
     Route::group(['prefix' => 'student'], function (){
