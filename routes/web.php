@@ -58,6 +58,9 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('students', StudentController::class);
         Route::resource("quizzes",QuizController::class);
         Route::resource("department",DepartmentController::class);
+
+        Route::resource("materials",MaterialController::class)->except(['show', 'update', 'edit', 'index']);
+
 //        SEARCH
         Route::get('search', [AdminMainController::class, 'search'])->name('adminSearch');
     });

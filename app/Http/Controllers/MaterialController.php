@@ -30,7 +30,12 @@ class MaterialController extends Controller
             $video = $request->has("video_id")
                 ? Video::find($request->get("video_id"))
                 : null;
-            return view("instructor.materials.create",compact("video", 'materials'));
+            if (auth()->user()->role_id == 1){
+                return view("admin.materials.create",compact("video", 'materials'));
+            } elseif (auth()->user()->role_id == 2) {
+                return view("instructor.materials.create",compact("video", 'materials'));
+            } else {return abort(404);}
+
         }
         else{
             return redirect()->back();

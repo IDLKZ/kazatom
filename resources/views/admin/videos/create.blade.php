@@ -162,6 +162,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <a class="btn btn-sm btn-primary mb-2" target="_blank" href="{{route("quizzes.create",["course_id"=>$video->course_id,"video_id"=>$video->id])}}">Тесты</a><br>
+                                                                    <a class="btn btn-sm btn-warning mb-2" target="_blank" href="{{route("materials.create",["video_id"=>$video->id])}}">Материалы</a><br>
                                                                     <a class="btn btn-sm btn-info mb-2" target="_blank" href="{{route("videos.edit",$video->id)}}">Изменить</a><br>
                                                                     @if($video->next_video == null)
                                                                     <form action="{{route('videos.destroy', $video->id)}}" method="post">
