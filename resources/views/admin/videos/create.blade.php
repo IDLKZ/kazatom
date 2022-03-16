@@ -236,17 +236,17 @@
                             </select>
                         </div>
                         <!-- Course description -->
-                        <div class="col-md-12 mt-4">
-                            <label class="form-label">Описание видеоурока</label>
+{{--                        <div class="col-md-12 mt-4">--}}
+{{--                            <label class="form-label">Описание видеоурока</label>--}}
 {{--                            <textarea name="description" id="editor"></textarea>--}}
-                            @if ($errors->has('description'))
-                                @foreach ($errors->get('description') as $message)
-                                    <div>
-                                        <span class="text-danger">{{$message}}</span>
-                                    </div>
-                                @endforeach
-                            @endif
-                        </div>
+{{--                            @if ($errors->has('description'))--}}
+{{--                                @foreach ($errors->get('description') as $message)--}}
+{{--                                    <div>--}}
+{{--                                        <span class="text-danger">{{$message}}</span>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
                     </div>
 
                     <div class="modal-footer">
