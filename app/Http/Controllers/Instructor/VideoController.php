@@ -123,7 +123,7 @@ class VideoController extends Controller
             if ($request->hasFile("url")) {
                 $video->uploadFile($request['url'], 'url');
             }
-            return redirect(route('videos.create', ["course_id" => Crypt::encrypt($video->course_id)]));
+            return redirect(route('in-videos.create', ["course_id" => Crypt::encrypt($video->course_id)]));
         }
         return abort(404);
 
