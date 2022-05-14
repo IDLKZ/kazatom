@@ -5,7 +5,7 @@
     <style>
         .my-video-dimensions {
             width: 100%!important;
-            height: 100%!important;
+            height: 600px!important;
         }
         .vjs-big-play-button {
             margin: 0;
@@ -14,6 +14,12 @@
             left: 50%!important;
             transform: translate(-50%, -50%);
         }
+		
+		@media only screen and (max-width: 800px){
+			.my-video-dimensions, #collapseWidthExample, .vh-100 {
+				height: 400px!important;
+			}
+		}
     </style>
 @endpush
 @section('content')
@@ -23,6 +29,7 @@
             <div class="row g-0">
                 <div class="d-flex">
                     <div class="overflow-hidden fullscreen-video w-100">
+						
                         <!-- Full screen video START -->
                         <video
                             id="my-video"
@@ -51,8 +58,15 @@
                     <!-- Page content START -->
                     <div class="justify-content-end position-relative">
 
+						<button class="navbar-toggler btn btn-white mt-4 plyr-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+					<span class="navbar-toggler-animation">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>	
+				</button>
                         <!-- Collapse body START -->
-                        <div class="collapse-horizontal collapse show" id="collapseWidthExample" style="">
+                        <div class="collapse-horizontal collapse" id="collapseWidthExample" style="">
                             <div class="card vh-100 overflow-auto rounded-0 w-280px w-sm-400px">
                                 <!-- Title -->
                                 <div class="card-header bg-light rounded-0">
