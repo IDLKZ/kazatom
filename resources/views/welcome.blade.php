@@ -2,7 +2,7 @@
 @push('css')
     <style>
         .img-course {
-            width: 300px;
+            <!-- width: 300px; -->
             height: 225px;
         }
     </style>
